@@ -1,0 +1,430 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Types | WorkNest</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor" aria-hidden="true"></div>
+    <div class="custom-cursor-outline" id="customCursorOutline" aria-hidden="true"></div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-brand">Work<span>Nest</span></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-building"></i>
+                <span class="brand-text">Work<span>Nest</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="properties.html">Properties</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="space-types.html">Space Types</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-2">
+                  <a href="signin.html" class="btn btn-outline-custom">Sign In</a>
+                  <a href="signup.html" class="btn btn-primary">Sign Up</a>
+                  <a href="book-tour.html" class="btn btn-outline-custom">Book a Tour</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <span class="section-label" data-aos="fade-up" data-aos-delay="0">SPACE TYPES</span>
+            <h1 data-aos="fade-up" data-aos-delay="100">Explore Our Spaces</h1>
+            <p data-aos="fade-up" data-aos-delay="200">From hot desks to private offices, find the perfect space for your work style</p>
+        </div>
+    </section>
+
+    <!-- Space Types Grid -->
+    <section>
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-label" data-aos="fade-up">OUR PLANS</span>
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Choose the Space That Fits You</h2>
+            </div>
+            <div class="row g-4">
+                <!-- Private Office -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass glass-hover" style="padding:36px 24px; text-align:center; height:100%; position:relative; overflow:hidden;">
+                        <div class="service-icon mx-auto mb-4">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                        <span style="font-size:2rem; font-weight:800; color:var(--primary-400);">$599</span><small style="color:var(--text-4); font-size:var(--fs-sm);">/mo</small>
+                        <h4 style="color:var(--text-1); font-weight:700; margin:12px 0 8px;">Private Office</h4>
+                        <p style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7;">A fully enclosed, lockable office for your team. Furnished, customizable, and designed for complete focus and privacy.</p>
+                        <ul style="list-style:none; padding:0; margin:20px 0; text-align:left;">
+                            <li style="padding:6px 0; color:var(--text-3); font-size:var(--fs-sm); display:flex; align-items:center; gap:8px;"><i class="bi bi-check-circle" style="color:var(--primary);"></i> Lockable private room</li>
+                            <li style="padding:6px 0; color:var(--text-3); font-size:var(--fs-sm); display:flex; align-items:center; gap:8px;"><i class="bi bi-check-circle" style="color:var(--primary);"></i> Custom furniture</li>
+                            <li style="padding:6px 0; color:var(--text-3); font-size:var(--fs-sm); display:flex; align-items:center; gap:8px;"><i class="bi bi-check-circle" style="color:var(--primary);"></i> Dedicated internet</li>
+                            <li style="padding:6px 0; color:var(--text-3); font-size:var(--fs-sm); display:flex; align-items:center; gap:8px;"><i class="bi bi-check-circle" style="color:var(--primary);"></i> Reception service</li>
+                        </ul>
+                        <a href="book-tour.html" class="btn btn-outline w-100">Select Plan</a>
+                    </div>
+                </div>
+                <!-- Dedicated Desk -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass glass-hover" style="padding:36px 24px; text-align:center; height:100%; position:relative; overflow:hidden;">
+                        <div class="service-icon mx-auto mb-4">
+                            <i class="fa-solid fa-desktop"></i>
+                        </div>
+                        <span style="font-size:2rem; font-weight:800; color:var(--primary-400);">$349</span><small style="color:var(--text-4); font-size:var(--fs-sm);">/mo</small>
+                        <h4 style="color:var(--text-1); font-weight:700; margin:12px 0 8px;">Dedicated Desk</h4>
+                        <p style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7;">Your own personal desk in a shared space. Keep your setup, store your belongings, and enjoy consistency every day.</p>
+                        <ul style="list-style:none; padding:0; margin:20px 0; text-align:left;">
+                            <li style="padding:6px 0; color:var(--text-3); font-size:var(--fs-sm); display:flex; align-items:center; gap:8px;"><i class="bi bi-check-circle" style="color:var(--primary);"></i> Personal desk</li>
+                            <li style="padding:6px 0; color:var(--text-3); font-size:var(--fs-sm); display:flex; align-items:center; gap:8px;"><i class="bi bi-check-circle" style="color:var(--primary);"></i> Storage locker</li>
+                            <li style="padding:6px 0; color:var(--text-3); font-size:var(--fs-sm); display:flex; align-items:center; gap:8px;"><i class="bi bi-check-circle" style="color:var(--primary);"></i> 24/7 access</li>
+                            <li style="padding:6px 0; color:var(--text-3); font-size:var(--fs-sm); display:flex; align-items:center; gap:8px;"><i class="bi bi-check-circle" style="color:var(--primary);"></i> Meeting room credits</li>
+                        </ul>
+                        <a href="book-tour.html" class="btn btn-outline w-100">Select Plan</a>
+                    </div>
+                </div>
+                <!-- Meeting Room -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="glass glass-hover" style="padding:36px 24px; text-align:center; height:100%; position:relative; overflow:hidden;">
+                        <div class="service-icon mx-auto mb-4">
+                            <i class="fa-solid fa-people-arrows"></i>
+                        </div>
+                        <span style="font-size:2rem; font-weight:800; color:var(--primary-400);">$49</span><small style="color:var(--text-4); font-size:var(--fs-sm);">/hr</small>
+                        <h4 style="color:var(--text-1); font-weight:700; margin:12px 0 8px;">Meeting Room</h4>
+                        <p style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7;">Professional meeting rooms equipped with projectors, whiteboards, and video conferencing for your presentations.</p>
+                        <ul style="list-style:none; padding:0; margin:20px 0; text-align:left;">
+                            <li style="padding:6px 0; color:var(--text-3); font-size:var(--fs-sm); display:flex; align-items:center; gap:8px;"><i class="bi bi-check-circle" style="color:var(--primary);"></i> Projector &amp; screen</li>
+                            <li style="padding:6px 0; color:var(--text-3); font-size:var(--fs-sm); display:flex; align-items:center; gap:8px;"><i class="bi bi-check-circle" style="color:var(--primary);"></i> Whiteboard</li>
+                            <li style="padding:6px 0; color:var(--text-3); font-size:var(--fs-sm); display:flex; align-items:center; gap:8px;"><i class="bi bi-check-circle" style="color:var(--primary);"></i> Video conferencing</li>
+                            <li style="padding:6px 0; color:var(--text-3); font-size:var(--fs-sm); display:flex; align-items:center; gap:8px;"><i class="bi bi-check-circle" style="color:var(--primary);"></i> Complimentary coffee</li>
+                        </ul>
+                        <a href="book-tour.html" class="btn btn-outline w-100">Select Plan</a>
+                    </div>
+                </div>
+                <!-- Virtual Office -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="glass glass-hover" style="padding:36px 24px; text-align:center; height:100%; position:relative; overflow:hidden;">
+                        <div class="service-icon mx-auto mb-4">
+                            <i class="fa-solid fa-laptop"></i>
+                        </div>
+                        <span style="font-size:2rem; font-weight:800; color:var(--primary-400);">$99</span><small style="color:var(--text-4); font-size:var(--fs-sm);">/mo</small>
+                        <h4 style="color:var(--text-1); font-weight:700; margin:12px 0 8px;">Virtual Office</h4>
+                        <p style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7;">Get a prestigious business address and mail handling without the need for a physical workspace.</p>
+                        <ul style="list-style:none; padding:0; margin:20px 0; text-align:left;">
+                            <li style="padding:6px 0; color:var(--text-3); font-size:var(--fs-sm); display:flex; align-items:center; gap:8px;"><i class="bi bi-check-circle" style="color:var(--primary);"></i> Business address</li>
+                            <li style="padding:6px 0; color:var(--text-3); font-size:var(--fs-sm); display:flex; align-items:center; gap:8px;"><i class="bi bi-check-circle" style="color:var(--primary);"></i> Mail handling</li>
+                            <li style="padding:6px 0; color:var(--text-3); font-size:var(--fs-sm); display:flex; align-items:center; gap:8px;"><i class="bi bi-check-circle" style="color:var(--primary);"></i> Call answering</li>
+                            <li style="padding:6px 0; color:var(--text-3); font-size:var(--fs-sm); display:flex; align-items:center; gap:8px;"><i class="bi bi-check-circle" style="color:var(--primary);"></i> Meeting room access</li>
+                        </ul>
+                        <a href="book-tour.html" class="btn btn-outline w-100">Select Plan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Comparison -->
+    <section>
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-label" data-aos="fade-up">COMPARISON</span>
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">What's Included in Each Plan</h2>
+            </div>
+            <div class="table-responsive" data-aos="fade-up" data-aos-delay="200">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Amenity</th>
+                            <th>Private Office</th>
+                            <th>Dedicated Desk</th>
+                            <th>Meeting Room</th>
+                            <th>Virtual Office</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i class="bi bi-wifi me-2" style="color:var(--primary);"></i>High-Speed WiFi</td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td><i class="bi bi-cup-hot me-2" style="color:var(--primary);"></i>Free Coffee</td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                        </tr>
+                        <tr>
+                            <td><i class="bi bi-clock-history me-2" style="color:var(--primary);"></i>24/7 Access</td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                            <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                        </tr>
+                        <tr>
+                            <td><i class="bi bi-easel me-2" style="color:var(--primary);"></i>Meeting Rooms</td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td><i class="bi bi-door-closed me-2" style="color:var(--primary);"></i>Private Cabin</td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                            <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                            <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                        </tr>
+                        <tr>
+                            <td><i class="bi bi-person-badge me-2" style="color:var(--primary);"></i>Reception</td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                            <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                            <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                        </tr>
+                        <tr>
+                            <td><i class="bi bi-printer me-2" style="color:var(--primary);"></i>Print / Scan</td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                        </tr>
+                        <tr>
+                            <td><i class="bi bi-telephone me-2" style="color:var(--primary);"></i>Phone Booth</td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-check-circle-fill text-success"></i></td>
+                            <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                            <td><i class="bi bi-x-circle-fill text-danger"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section>
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-label" data-aos="fade-up">HOW IT WORKS</span>
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Get Started in 3 Simple Steps</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass glass-hover" style="padding:36px 28px; text-align:center; height:100%;">
+                        <div class="why-num" style="text-align:center;">01</div>
+                        <h4 style="color:var(--text-1); font-weight:700;">Choose Your Space</h4>
+                        <p style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7; margin-top:8px;">Browse our collection of workspaces and select the one that fits your needs and budget.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass glass-hover" style="padding:36px 28px; text-align:center; height:100%;">
+                        <div class="why-num" style="text-align:center;">02</div>
+                        <h4 style="color:var(--text-1); font-weight:700;">Customize Your Plan</h4>
+                        <p style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7; margin-top:8px;">Add or remove amenities, choose your preferred location, and set your membership duration.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="glass glass-hover" style="padding:36px 28px; text-align:center; height:100%;">
+                        <div class="why-num" style="text-align:center;">03</div>
+                        <h4 style="color:var(--text-1); font-weight:700;">Start Working</h4>
+                        <p style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7; margin-top:8px;">Move in on your chosen date and start enjoying your new premium workspace immediately.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section style="padding:80px 0; position:relative; z-index:1;">
+        <div class="container text-center">
+            <span class="section-label" data-aos="fade-up">TESTIMONIALS</span>
+            <h2 class="section-title mb-5" data-aos="fade-up" data-aos-delay="100">What Our Members Say</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p style="color:var(--text-3);font-size:var(--fs-sm);line-height:1.7;font-style:italic;margin-bottom:20px;"><span style="color:var(--primary);font-size:2rem;font-weight:700;line-height:0;vertical-align:-0.4em;margin-right:4px;">&#8220;</span>The private office gave our team the perfect balance of focus and collaboration. Best investment we made this year.</p>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fm=webp&w=100&q=80" alt="Rahul" style="width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid var(--glass-border);">
+                            <div><strong style="color:var(--text-1);font-size:var(--fs-sm);display:block;">Rahul Sharma</strong><span style="color:var(--text-4);font-size:var(--fs-xs);">CTO, InnovateTech</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p style="color:var(--text-3);font-size:var(--fs-sm);line-height:1.7;font-style:italic;margin-bottom:20px;"><span style="color:var(--primary);font-size:2rem;font-weight:700;line-height:0;vertical-align:-0.4em;margin-right:4px;">&#8220;</span>The dedicated desk plan is perfect for freelancers. I have my own space, my own drawer, and access to everything I need.</p>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=webp&w=100&q=80" alt="Priya" style="width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid var(--glass-border);">
+                            <div><strong style="color:var(--text-1);font-size:var(--fs-sm);display:block;">Priya Patel</strong><span style="color:var(--text-4);font-size:var(--fs-xs);">Freelance Writer</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p style="color:var(--text-3);font-size:var(--fs-sm);line-height:1.7;font-style:italic;margin-bottom:20px;"><span style="color:var(--primary);font-size:2rem;font-weight:700;line-height:0;vertical-align:-0.4em;margin-right:4px;">&#8220;</span>Used the meeting room for a client pitch. The setup was professional and the client was impressed. Closed the deal!</p>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fm=webp&w=100&q=80" alt="Vikram" style="width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid var(--glass-border);">
+                            <div><strong style="color:var(--text-1);font-size:var(--fs-sm);display:block;">Vikram Singh</strong><span style="color:var(--text-4);font-size:var(--fs-xs);">Business Consultant</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="padding:80px 0; position:relative; z-index:1;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-label" data-aos="fade-up">FAQ</span>
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Frequently Asked Questions</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="accordion" id="spaceFaq">
+                        <div class="accordion-item" style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--r-md);margin-bottom:12px;overflow:hidden;">
+                            <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#sf1" style="background:transparent;color:var(--text-1);font-weight:600;padding:16px 20px;box-shadow:none;">Can I switch plans after signing up?</button></h2>
+                            <div id="sf1" class="accordion-collapse collapse show" data-bs-parent="#spaceFaq"><div class="accordion-body" style="color:var(--text-3);font-size:var(--fs-sm);line-height:1.7;padding:0 20px 16px;">Yes! You can upgrade or downgrade your plan at any time. Changes take effect from the next billing cycle with no penalties.</div></div>
+                        </div>
+                        <div class="accordion-item" style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--r-md);margin-bottom:12px;overflow:hidden;">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sf2" style="background:transparent;color:var(--text-1);font-weight:600;padding:16px 20px;box-shadow:none;">Is there a minimum commitment period?</button></h2>
+                            <div id="sf2" class="accordion-collapse collapse" data-bs-parent="#spaceFaq"><div class="accordion-body" style="color:var(--text-3);font-size:var(--fs-sm);line-height:1.7;padding:0 20px 16px;">Monthly plans have no commitment. Annual plans offer a 20% discount but require a 12-month commitment. You can cancel anytime with 30 days notice.</div></div>
+                        </div>
+                        <div class="accordion-item" style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--r-md);margin-bottom:12px;overflow:hidden;">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sf3" style="background:transparent;color:var(--text-1);font-weight:600;padding:16px 20px;box-shadow:none;">What's included in the virtual office plan?</button></h2>
+                            <div id="sf3" class="accordion-collapse collapse" data-bs-parent="#spaceFaq"><div class="accordion-body" style="color:var(--text-3);font-size:var(--fs-sm);line-height:1.7;padding:0 20px 16px;">You get a premium business address, mail handling and forwarding, call answering services, and access to meeting rooms on demand.</div></div>
+                        </div>
+                        <div class="accordion-item" style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--r-md);margin-bottom:12px;overflow:hidden;">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sf4" style="background:transparent;color:var(--text-1);font-weight:600;padding:16px 20px;box-shadow:none;">Can I use multiple locations?</button></h2>
+                            <div id="sf4" class="accordion-collapse collapse" data-bs-parent="#spaceFaq"><div class="accordion-body" style="color:var(--text-3);font-size:var(--fs-sm);line-height:1.7;padding:0 20px 16px;">Enterprise plans include multi-location access. Other plans can add location passes for $49/month per additional location.</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box" data-aos="zoom-in">
+                <h2>Ready to Find Your Perfect Space?</h2>
+                <p>Take our quick space finder quiz or browse our properties to discover the ideal workspace for your team.</p>
+                <div class="cta-buttons">
+                    <a href="properties.html" class="btn btn-primary">Browse Properties</a>
+                    <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <div class="nav-brand-icon" style="width:30px; height:30px; font-size:14px;">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                        <span class="nav-brand" style="font-size:1.1rem;">Work<span>Nest</span></span>
+                    </div>
+                    <p class="footer-brand p-0" style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7; max-width:280px;">Premium co-working spaces designed for modern professionals. Elevate your work experience with WorkNest.</p>
+                    <div class="footer-socials mt-3">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h6>Quick Links</h6>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="space-types.html">Space Types</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h6>Contact</h6>
+                    <ul>
+                        <li><i class="bi bi-envelope-fill" style="color:var(--primary);"></i> hello@worknest.com</li>
+                        <li><i class="bi bi-telephone-fill" style="color:var(--primary);"></i> +91 98765 43210</li>
+                        <li><i class="bi bi-geo-alt-fill" style="color:var(--primary);"></i> 42 Business Park, Koramangala, Bangalore 560034</li>
+                    </ul>
+                </div>
+                <div class="footer-cities">
+                    <h6>Our Cities</h6>
+                    <ul>
+                        <li><a href="#">Mumbai</a></li>
+                        <li><a href="#">Delhi</a></li>
+                        <li><a href="#">Bangalore</a></li>
+                        <li><a href="#">Hyderabad</a></li>
+                        <li><a href="#">Pune</a></li>
+                        <li><a href="#">Chennai</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WorkNest. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 80, delay: 0, duration: 800, easing: 'ease-in-cubic', once: true });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

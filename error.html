@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | WorkNest</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+
+    <div style="position:fixed;inset:0;z-index:0;">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?fm=webp&w=1200&q=60" alt="" style="width:100%;height:100%;object-fit:cover;opacity:0.08;">
+        <div style="position:absolute;inset:0;background:var(--bg-0);"></div>
+    </div>
+
+    <div class="custom-cursor" id="customCursor" aria-hidden="true"></div>
+    <div class="custom-cursor-outline" id="customCursorOutline" aria-hidden="true"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-building"></i>
+                <span class="brand-text">Work<span>Nest</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="properties.html">Properties</a></li>
+                    <li class="nav-item"><a class="nav-link" href="space-types.html">Space Types</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-2">
+                    <a href="signin.html" class="btn btn-outline-custom">Sign In</a>
+                    <a href="signup.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section style="min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 0;">
+        <div class="container">
+            <div data-aos="fade-up" style="font-size:clamp(6rem,15vw,12rem);font-weight:900;line-height:1;background:linear-gradient(135deg,var(--primary),var(--primary-400),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;">404</div>
+            <h1 data-aos="fade-up" data-aos-delay="100" style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:var(--text-1);margin-bottom:16px;">Page Not Found</h1>
+            <p data-aos="fade-up" data-aos-delay="200" style="color:var(--text-3);font-size:var(--fs-md);max-width:480px;margin:0 auto 2rem;">The page you're looking for doesn't exist or has been moved to a new location.</p>
+            <div data-aos="fade-up" data-aos-delay="300">
+                <a href="index.html" class="btn btn-primary"><i class="bi bi-house me-2"></i>Go Home</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({offset:80,delay:0,duration:800,easing:'ease-in-cubic',once:true});</script>
+    <script src="js/script.js"></script>
+</body>
+</html>

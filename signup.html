@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create your free WorkNest account and access premium co-working spaces across India.">
+  <title>Sign Up | WorkNest</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div class="loader hidden" id="loader">
+    <div class="loader-spinner"></div>
+    <div class="loader-brand">Work<span>Nest</span></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" aria-hidden="true"></div>
+  <div class="custom-cursor-outline" aria-hidden="true"></div>
+
+  <!-- Toast -->
+  <div class="auth-toast" id="authToast">
+    <i class="fa-solid fa-circle-exclamation"></i>
+    <span id="authToastMsg"></span>
+  </div>
+
+  <div class="auth-layout">
+
+    <!-- Left Panel -->
+    <div class="auth-left">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="auth-left-bg">
+        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?fm=webp&w=1200&q=80" alt="Modern office interior" loading="lazy">
+        <div class="auth-left-overlay"></div>
+      </div>
+      <div class="auth-left-content" data-aos="fade-right" data-aos-delay="200">
+        <div class="auth-left-badge">
+          <i class="fa-solid fa-sparkles"></i>
+          <span>Start Free Today</span>
+        </div>
+        <h2>Join the Future of <span>Co-Working</span></h2>
+        <p>Create your free account and unlock access to beautifully designed workspaces across 50+ cities in India.</p>
+        <div class="auth-features">
+          <div class="auth-feature">
+            <div class="auth-feature-icon"><i class="fa-solid fa-credit-card"></i></div>
+            <span class="auth-feature-text">No credit card required to get started</span>
+          </div>
+          <div class="auth-feature">
+            <div class="auth-feature-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <span class="auth-feature-text">Free guided tour of any workspace</span>
+          </div>
+          <div class="auth-feature">
+            <div class="auth-feature-icon"><i class="fa-solid fa-users"></i></div>
+            <span class="auth-feature-text">Access to 10,000+ member community</span>
+          </div>
+          <div class="auth-feature">
+            <div class="auth-feature-icon"><i class="fa-solid fa-rotate-left"></i></div>
+            <span class="auth-feature-text">Cancel anytime, no hidden fees</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Panel (Form) -->
+    <div class="auth-right">
+      <div class="grid-lines"></div>
+      <div class="auth-form-wrapper" data-aos="fade-left" data-aos-delay="300">
+
+        <div class="auth-logo-wrap">
+          <div class="auth-logo">
+            <div class="auth-logo-icon"><i class="fa-solid fa-building"></i></div>
+            <div class="auth-logo-text">
+              <span class="brand-first">Work</span><span class="brand-second">Nest</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-header">
+          <h1>Create Account</h1>
+          <p>Fill in your details to get started for free</p>
+        </div>
+
+        <div class="auth-social-row">
+          <a href="#" class="auth-social-btn">
+            <i class="fa-brands fa-google" style="color:#ea4335;"></i>
+            Google
+          </a>
+          <a href="#" class="auth-social-btn">
+            <i class="fa-brands fa-apple" style="color:#fff;"></i>
+            Apple
+          </a>
+        </div>
+
+        <div class="auth-divider"><span>or sign up with email</span></div>
+
+        <form id="signupForm" onsubmit="return handleSignUp(event)">
+          <div class="auth-field">
+            <label>Full Name</label>
+            <div class="auth-input-wrap">
+              <i class="fa-regular fa-user input-icon"></i>
+              <input type="text" class="auth-input" id="signupName" placeholder="John Doe" required>
+            </div>
+          </div>
+
+          <div class="auth-field">
+            <label>Email Address</label>
+            <div class="auth-input-wrap">
+              <i class="fa-regular fa-envelope input-icon"></i>
+              <input type="email" class="auth-input" id="signupEmail" placeholder="you@example.com" required>
+            </div>
+          </div>
+
+          <div class="auth-field">
+            <label>Password</label>
+            <div class="auth-input-wrap">
+              <i class="fa-solid fa-lock input-icon"></i>
+              <input type="password" class="auth-input" id="signupPassword" placeholder="Create a strong password" required oninput="checkPasswordStrength(this.value)">
+              <button type="button" class="input-action" onclick="togglePassword('signupPassword', this)">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+            <div class="auth-strength" id="passwordStrength" data-level="0">
+              <div class="auth-strength-bar"></div>
+              <div class="auth-strength-bar"></div>
+              <div class="auth-strength-bar"></div>
+              <div class="auth-strength-bar"></div>
+            </div>
+            <div class="auth-strength-text" id="strengthText"></div>
+          </div>
+
+          <div class="auth-field">
+            <label>Confirm Password</label>
+            <div class="auth-input-wrap">
+              <i class="fa-solid fa-shield-halved input-icon"></i>
+              <input type="password" class="auth-input" id="signupConfirm" placeholder="Re-enter your password" required>
+              <button type="button" class="input-action" onclick="togglePassword('signupConfirm', this)">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="auth-check">
+            <input type="checkbox" id="agreeTerms" required>
+            <label for="agreeTerms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+          </div>
+
+          <button type="submit" class="auth-submit" id="signupBtn">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Create Account</span>
+          </button>
+        </form>
+
+        <div class="auth-footer-link">
+          <p>Already have an account? <a href="signin.html">Sign in</a></p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 700 });
+
+    window.addEventListener('load', function () {
+      var loader = document.getElementById('loader');
+      if (loader) setTimeout(function () { loader.classList.add('hidden'); }, 600);
+    });
+
+    function showToast(msg, type) {
+      var toast = document.getElementById('authToast');
+      var icon = toast.querySelector('i');
+      document.getElementById('authToastMsg').textContent = msg;
+      toast.className = 'auth-toast ' + (type || '');
+      if (type === 'success') icon.className = 'fa-solid fa-circle-check';
+      else icon.className = 'fa-solid fa-circle-exclamation';
+      setTimeout(function () { toast.classList.add('show'); }, 10);
+      setTimeout(function () { toast.classList.remove('show'); }, 3500);
+    }
+
+    function togglePassword(id, btn) {
+      var input = document.getElementById(id);
+      var icon = btn.querySelector('i');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.replace('fa-eye', 'fa-eye-slash');
+      } else {
+        input.type = 'password';
+        icon.classList.replace('fa-eye-slash', 'fa-eye');
+      }
+    }
+
+    function checkPasswordStrength(pw) {
+      var bar = document.getElementById('passwordStrength');
+      var text = document.getElementById('strengthText');
+      var score = 0;
+      if (pw.length >= 8) score++;
+      if (/[A-Z]/.test(pw) && /[a-z]/.test(pw)) score++;
+      if (/[0-9]/.test(pw)) score++;
+      if (/[^A-Za-z0-9]/.test(pw)) score++;
+
+      bar.setAttribute('data-level', score);
+      var labels = ['', 'Weak', 'Fair', 'Strong', 'Very Strong'];
+      var colors = ['', '#ef4444', '#f59e0b', '#10b981', '#10b981'];
+      text.textContent = pw.length > 0 ? labels[score] || '' : '';
+      text.style.color = colors[score] || '';
+    }
+
+    function handleSignUp(e) {
+      e.preventDefault();
+      var pw = document.getElementById('signupPassword').value;
+      var cpw = document.getElementById('signupConfirm').value;
+      var name = document.getElementById('signupName').value.trim();
+
+      if (!name) { showToast('Please enter your full name.'); return false; }
+      if (pw !== cpw) { showToast('Passwords do not match.'); return false; }
+      if (pw.length < 8) { showToast('Password must be at least 8 characters.'); return false; }
+
+      var btn = document.getElementById('signupBtn');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><span>Creating Account...</span>';
+
+      setTimeout(function () {
+        btn.innerHTML = '<i class="fa-solid fa-check"></i><span>Account Created!</span>';
+        btn.style.background = 'linear-gradient(135deg, #059669, #047857)';
+        showToast('Account created successfully!', 'success');
+        setTimeout(function () { window.location.href = 'signin.html'; }, 1400);
+      }, 1800);
+      return false;
+    }
+  </script>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="nav-brand-icon" style="width:30px; height:30px; font-size:14px;">
+              <i class="fa-solid fa-building"></i>
+            </div>
+            <span class="nav-brand" style="font-size:1.1rem;">Work<span>Nest</span></span>
+          </div>
+          <p class="footer-brand p-0" style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7; max-width:280px;">Premium co-working spaces designed for modern professionals. Elevate your work experience with WorkNest.</p>
+          <div class="footer-socials mt-3">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h6>Quick Links</h6>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="properties.html">Properties</a></li>
+            <li><a href="space-types.html">Space Types</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h6>Contact</h6>
+          <ul>
+            <li><i class="bi bi-envelope-fill" style="color:var(--primary);"></i> hello@worknest.com</li>
+            <li><i class="bi bi-telephone-fill" style="color:var(--primary);"></i> +91 98765 43210</li>
+            <li><i class="bi bi-geo-alt-fill" style="color:var(--primary);"></i> 42 Business Park, Koramangala, Bangalore 560034</li>
+          </ul>
+        </div>
+        <div class="footer-cities">
+          <h6>Our Cities</h6>
+          <ul>
+            <li><a href="#">Mumbai</a></li>
+            <li><a href="#">Delhi</a></li>
+            <li><a href="#">Bangalore</a></li>
+            <li><a href="#">Hyderabad</a></li>
+            <li><a href="#">Pune</a></li>
+            <li><a href="#">Chennai</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 WorkNest. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

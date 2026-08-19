@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkNest — Our Properties</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/properties.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor" aria-hidden="true"></div>
+    <div class="custom-cursor-outline" id="customCursorOutline" aria-hidden="true"></div>
+
+    <!-- ==================== LOADER ==================== -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-logo">Work<span>Nest</span></div>
+    </div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-building"></i>
+                <span class="brand-text">Work<span>Nest</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="properties.html">Properties</a></li>
+                    <li class="nav-item"><a class="nav-link" href="space-types.html">Space Types</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <a href="book-tour.html" class="btn btn-primary">Book a Tour</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== PAGE BANNER ==================== -->
+    <section class="page-banner">
+        <div class="container">
+            <h1 data-aos="fade-up">Our Properties</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Browse our curated collection of premium workspaces designed for modern professionals</p>
+        </div>
+    </section>
+
+    <!-- ==================== FILTER BAR ==================== -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-bar glass" data-aos="fade-up">
+                <div class="filter-search">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search by name, location, or type..." aria-label="Search properties">
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-type="all">All</button>
+                    <button class="filter-btn" data-type="private-office">Private Office</button>
+                    <button class="filter-btn" data-type="dedicated-desk">Dedicated Desk</button>
+                    <button class="filter-btn" data-type="meeting-room">Meeting Room</button>
+                    <button class="filter-btn" data-type="virtual-office">Virtual Office</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROPERTIES GRID ==================== -->
+    <section class="properties-section">
+        <div class="container">
+            <div class="properties-grid" id="propertiesGrid">
+
+                <!-- Property 1 — Private Office, Mumbai -->
+                <div class="property-card" data-type="private-office" data-aos="fade-up" data-aos-delay="0">
+                    <div class="property-img">
+                        <img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?w=600&h=400&fit=crop" alt="Private Office at Andheri" loading="lazy">
+                        <span class="property-badge">Private Office</span>
+                        <span class="property-price">₹35,000/mo</span>
+                    </div>
+                    <div class="property-body">
+                        <h4>NestHub Premium — Andheri</h4>
+                        <p class="property-location"><i class="bi bi-geo-alt"></i> Andheri West, Mumbai</p>
+                        <div class="property-tags">
+                            <span><i class="bi bi-arrows-fullscreen"></i> 480 sq ft</span>
+                            <span><i class="bi bi-people"></i> 6 Seats</span>
+                        </div>
+                        <a href="#" class="property-link">View Details <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Property 2 — Dedicated Desk, Bangalore -->
+                <div class="property-card" data-type="dedicated-desk" data-aos="fade-up" data-aos-delay="100">
+                    <div class="property-img">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop" alt="Dedicated Desk at Indiranagar" loading="lazy">
+                        <span class="property-badge">Dedicated Desk</span>
+                        <span class="property-price">₹18,000/mo</span>
+                    </div>
+                    <div class="property-body">
+                        <h4>CoWrks Indiranagar — Floor 3</h4>
+                        <p class="property-location"><i class="bi bi-geo-alt"></i> Indiranagar, Bangalore</p>
+                        <div class="property-tags">
+                            <span><i class="bi bi-arrows-fullscreen"></i> 60 sq ft</span>
+                            <span><i class="bi bi-people"></i> 1 Seat</span>
+                        </div>
+                        <a href="#" class="property-link">View Details <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Property 3 — Meeting Room, Delhi -->
+                <div class="property-card" data-type="meeting-room" data-aos="fade-up" data-aos-delay="200">
+                    <div class="property-img">
+                        <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?w=600&h=400&fit=crop" alt="Meeting Room at Connaught Place" loading="lazy">
+                        <span class="property-badge">Meeting Room</span>
+                        <span class="property-price">₹1,200/hr</span>
+                    </div>
+                    <div class="property-body">
+                        <h4>Innov8 Boardroom — CP</h4>
+                        <p class="property-location"><i class="bi bi-geo-alt"></i> Connaught Place, Delhi</p>
+                        <div class="property-tags">
+                            <span><i class="bi bi-arrows-fullscreen"></i> 320 sq ft</span>
+                            <span><i class="bi bi-people"></i> 20 Seats</span>
+                        </div>
+                        <a href="#" class="property-link">View Details <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Property 4 — Virtual Office, Hyderabad -->
+                <div class="property-card" data-type="virtual-office" data-aos="fade-up" data-aos-delay="0">
+                    <div class="property-img">
+                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&h=400&fit=crop" alt="Virtual Office at Madhapur" loading="lazy">
+                        <span class="property-badge">Virtual Office</span>
+                        <span class="property-price">₹4,500/mo</span>
+                    </div>
+                    <div class="property-body">
+                        <h4>iKeva Business Hub — Madhapur</h4>
+                        <p class="property-location"><i class="bi bi-geo-alt"></i> Madhapur, Hyderabad</p>
+                        <div class="property-tags">
+                            <span><i class="bi bi-mailbox"></i> Mail Handling</span>
+                            <span><i class="bi bi-building"></i> Business Address</span>
+                        </div>
+                        <a href="#" class="property-link">View Details <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Property 5 — Dedicated Desk, Pune -->
+                <div class="property-card" data-type="dedicated-desk" data-aos="fade-up" data-aos-delay="100">
+                    <div class="property-img">
+                        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&h=400&fit=crop" alt="Dedicated Desk at Baner" loading="lazy">
+                        <span class="property-badge">Dedicated Desk</span>
+                        <span class="property-price">₹15,000/mo</span>
+                    </div>
+                    <div class="property-body">
+                        <h4>Regus Workspace — Baner</h4>
+                        <p class="property-location"><i class="bi bi-geo-alt"></i> Baner Road, Pune</p>
+                        <div class="property-tags">
+                            <span><i class="bi bi-arrows-fullscreen"></i> 55 sq ft</span>
+                            <span><i class="bi bi-people"></i> 1 Seat</span>
+                        </div>
+                        <a href="#" class="property-link">View Details <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Property 6 — Private Office, Bangalore -->
+                <div class="property-card" data-type="private-office" data-aos="fade-up" data-aos-delay="200">
+                    <div class="property-img">
+                        <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=600&h=400&fit=crop" alt="Private Office at Koramangala" loading="lazy">
+                        <span class="property-badge">Private Office</span>
+                        <span class="property-price">₹42,000/mo</span>
+                    </div>
+                    <div class="property-body">
+                        <h4>Smartworks Koramangala — Suite B</h4>
+                        <p class="property-location"><i class="bi bi-geo-alt"></i> Koramangala, Bangalore</p>
+                        <div class="property-tags">
+                            <span><i class="bi bi-arrows-fullscreen"></i> 720 sq ft</span>
+                            <span><i class="bi bi-people"></i> 10 Seats</span>
+                        </div>
+                        <a href="#" class="property-link">View Details <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- No Results -->
+            <div class="no-results" id="noResults">
+                <i class="bi bi-search"></i>
+                <h3>No Properties Found</h3>
+                <p>Try adjusting your search or filter criteria.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== STATS ==================== -->
+    <section style="padding:60px 0; position:relative; z-index:1;">
+        <div class="container">
+            <div class="row g-4" data-aos="fade-up">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-box">
+                        <h3>200+</h3>
+                        <span>Premium Workspaces</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-box">
+                        <h3>50+</h3>
+                        <span>Cities Across India</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-box">
+                        <h3>10K+</h3>
+                        <span>Happy Members</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-box">
+                        <h3>4.9/5</h3>
+                        <span>Average Rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FEATURED PROPERTY ==================== -->
+    <section style="padding:80px 0; position:relative; z-index:1;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-label" data-aos="fade-up">FEATURED</span>
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Our Flagship Property</h2>
+            </div>
+            <div class="row g-4 align-items-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-7">
+                    <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--glass-border);height:400px;">
+                        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?fm=webp&w=900&q=80" alt="Smartworks flagship office" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="glass" style="padding:36px;">
+                        <span style="display:inline-block;padding:4px 12px;border-radius:var(--r-full);background:rgba(var(--primary-rgb),0.12);color:var(--primary-400);font-size:var(--fs-xs);font-weight:600;margin-bottom:16px;">Most Popular</span>
+                        <h3 style="color:var(--text-1);font-weight:800;font-size:1.5rem;margin-bottom:8px;">Smartworks Koramangala — Suite B</h3>
+                        <p style="color:var(--text-4);font-size:var(--fs-sm);display:flex;align-items:center;gap:6px;margin-bottom:16px;"><i class="bi bi-geo-alt" style="color:var(--primary);"></i> Koramangala, Bangalore</p>
+                        <p style="color:var(--text-3);font-size:var(--fs-sm);line-height:1.7;margin-bottom:20px;">Our flagship private office suite features floor-to-ceiling windows, dedicated reception, pantry access, and stunning city views. Perfect for teams of 8-12.</p>
+                        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px;">
+                            <div style="display:flex;align-items:center;gap:6px;color:var(--text-3);font-size:var(--fs-sm);"><i class="bi bi-arrows-fullscreen" style="color:var(--primary-400);"></i> 720 sq ft</div>
+                            <div style="display:flex;align-items:center;gap:6px;color:var(--text-3);font-size:var(--fs-sm);"><i class="bi bi-people" style="color:var(--primary-400);"></i> 10 Seats</div>
+                            <div style="display:flex;align-items:center;gap:6px;color:var(--text-3);font-size:var(--fs-sm);"><i class="bi bi-wifi" style="color:var(--primary-400);"></i> 1 Gbps WiFi</div>
+                            <div style="display:flex;align-items:center;gap:6px;color:var(--text-3);font-size:var(--fs-sm);"><i class="bi bi-clock-history" style="color:var(--primary-400);"></i> 24/7 Access</div>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <span style="font-size:1.75rem;font-weight:800;color:var(--primary-400);">₹42,000</span><span style="color:var(--text-4);font-size:var(--fs-sm);">/month</span>
+                        </div>
+                        <div style="display:flex;gap:10px;margin-top:20px;">
+                <div class="d-flex align-items-center gap-2">
+                  <a href="signin.html" class="btn btn-outline-custom">Sign In</a>
+                  <a href="signup.html" class="btn btn-primary">Sign Up</a>
+                  <a href="book-tour.html" class="btn btn-outline-custom">Book a Tour</a>
+                </div>
+                            <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== LOCATIONS ==================== -->
+    <section style="padding:80px 0; position:relative; z-index:1;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-label" data-aos="fade-up">LOCATIONS</span>
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Available Across Major Cities</h2>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div style="border-radius:var(--r-lg);overflow:hidden;height:220px;border:1px solid var(--glass-border);position:relative;">
+                        <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?fm=webp&w=600&q=80" alt="Bangalore skyline" style="width:100%;height:100%;object-fit:cover;">
+                        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,10,24,0.7),transparent 60%);"></div>
+                        <div style="position:absolute;bottom:16px;left:16px;">
+                            <h5 style="color:var(--text-1);font-weight:700;margin-bottom:2px;">Bangalore</h5>
+                            <span style="color:var(--primary-400);font-size:var(--fs-xs);font-weight:500;">45 Properties</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div style="border-radius:var(--r-lg);overflow:hidden;height:220px;border:1px solid var(--glass-border);position:relative;">
+                        <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?fm=webp&w=600&q=80" alt="Mumbai skyline" style="width:100%;height:100%;object-fit:cover;">
+                        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,10,24,0.7),transparent 60%);"></div>
+                        <div style="position:absolute;bottom:16px;left:16px;">
+                            <h5 style="color:var(--text-1);font-weight:700;margin-bottom:2px;">Mumbai</h5>
+                            <span style="color:var(--primary-400);font-size:var(--fs-xs);font-weight:500;">38 Properties</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div style="border-radius:var(--r-lg);overflow:hidden;height:220px;border:1px solid var(--glass-border);position:relative;">
+                        <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?fm=webp&w=600&q=80" alt="Delhi skyline" style="width:100%;height:100%;object-fit:cover;">
+                        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,10,24,0.7),transparent 60%);"></div>
+                        <div style="position:absolute;bottom:16px;left:16px;">
+                            <h5 style="color:var(--text-1);font-weight:700;margin-bottom:2px;">Delhi NCR</h5>
+                            <span style="color:var(--primary-400);font-size:var(--fs-xs);font-weight:500;">32 Properties</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div style="border-radius:var(--r-lg);overflow:hidden;height:220px;border:1px solid var(--glass-border);position:relative;">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?fm=webp&w=600&q=80" alt="Hyderabad skyline" style="width:100%;height:100%;object-fit:cover;">
+                        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,10,24,0.7),transparent 60%);"></div>
+                        <div style="position:absolute;bottom:16px;left:16px;">
+                            <h5 style="color:var(--text-1);font-weight:700;margin-bottom:2px;">Hyderabad</h5>
+                            <span style="color:var(--primary-400);font-size:var(--fs-xs);font-weight:500;">28 Properties</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div style="border-radius:var(--r-lg);overflow:hidden;height:220px;border:1px solid var(--glass-border);position:relative;">
+                        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?fm=webp&w=600&q=80" alt="Pune skyline" style="width:100%;height:100%;object-fit:cover;">
+                        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,10,24,0.7),transparent 60%);"></div>
+                        <div style="position:absolute;bottom:16px;left:16px;">
+                            <h5 style="color:var(--text-1);font-weight:700;margin-bottom:2px;">Pune</h5>
+                            <span style="color:var(--primary-400);font-size:var(--fs-xs);font-weight:500;">25 Properties</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div style="border-radius:var(--r-lg);overflow:hidden;height:220px;border:1px solid var(--glass-border);position:relative;">
+                        <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?fm=webp&w=600&q=80" alt="Chennai skyline" style="width:100%;height:100%;object-fit:cover;">
+                        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,10,24,0.7),transparent 60%);"></div>
+                        <div style="position:absolute;bottom:16px;left:16px;">
+                            <h5 style="color:var(--text-1);font-weight:700;margin-bottom:2px;">Chennai</h5>
+                            <span style="color:var(--primary-400);font-size:var(--fs-xs);font-weight:500;">20 Properties</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section style="padding:80px 0; position:relative; z-index:1;">
+        <div class="container text-center">
+            <span class="section-label" data-aos="fade-up">TESTIMONIALS</span>
+            <h2 class="section-title mb-5" data-aos="fade-up" data-aos-delay="100">What Our Members Say</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p style="color:var(--text-3);font-size:var(--fs-sm);line-height:1.7;font-style:italic;margin-bottom:20px;"><span style="color:var(--primary);font-size:2rem;font-weight:700;line-height:0;vertical-align:-0.4em;margin-right:4px;">&#8220;</span>Found our dream office in Bangalore through WorkNest. The booking process was seamless and the space exceeded our expectations.</p>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fm=webp&w=100&q=80" alt="Rahul" style="width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid var(--glass-border);">
+                            <div><strong style="color:var(--text-1);font-size:var(--fs-sm);display:block;">Rahul Sharma</strong><span style="color:var(--text-4);font-size:var(--fs-xs);">CTO, TechStart India</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p style="color:var(--text-3);font-size:var(--fs-sm);line-height:1.7;font-style:italic;margin-bottom:20px;"><span style="color:var(--primary);font-size:2rem;font-weight:700;line-height:0;vertical-align:-0.4em;margin-right:4px;">&#8220;</span>The filter options made it easy to narrow down exactly what we needed. Ended up choosing a dedicated desk in Mumbai. Love it!</p>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=webp&w=100&q=80" alt="Priya" style="width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid var(--glass-border);">
+                            <div><strong style="color:var(--text-1);font-size:var(--fs-sm);display:block;">Priya Patel</strong><span style="color:var(--text-4);font-size:var(--fs-xs);">Freelance Designer</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p style="color:var(--text-3);font-size:var(--fs-sm);line-height:1.7;font-style:italic;margin-bottom:20px;"><span style="color:var(--primary);font-size:2rem;font-weight:700;line-height:0;vertical-align:-0.4em;margin-right:4px;">&#8220;</span>Booked a meeting room for a client presentation. The venue was professional, well-equipped, and the client was impressed.</p>
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fm=webp&w=100&q=80" alt="Vikram" style="width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid var(--glass-border);">
+                            <div><strong style="color:var(--text-1);font-size:var(--fs-sm);display:block;">Vikram Singh</strong><span style="color:var(--text-4);font-size:var(--fs-xs);">Business Consultant</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section style="padding:80px 0; position:relative; z-index:1;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-label" data-aos="fade-up">FAQ</span>
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Frequently Asked Questions</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="accordion" id="propFaq">
+                        <div class="accordion-item" style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--r-md);margin-bottom:12px;overflow:hidden;">
+                            <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pf1" style="background:transparent;color:var(--text-1);font-weight:600;padding:16px 20px;box-shadow:none;">How do I book a property?</button></h2>
+                            <div id="pf1" class="accordion-collapse collapse show" data-bs-parent="#propFaq"><div class="accordion-body" style="color:var(--text-3);font-size:var(--fs-sm);line-height:1.7;padding:0 20px 16px;">Simply browse our properties, click "View Details" on the one you like, and schedule a tour. Our team will guide you through the entire booking process.</div></div>
+                        </div>
+                        <div class="accordion-item" style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--r-md);margin-bottom:12px;overflow:hidden;">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pf2" style="background:transparent;color:var(--text-1);font-weight:600;padding:16px 20px;box-shadow:none;">Can I visit the property before booking?</button></h2>
+                            <div id="pf2" class="accordion-collapse collapse" data-bs-parent="#propFaq"><div class="accordion-body" style="color:var(--text-3);font-size:var(--fs-sm);line-height:1.7;padding:0 20px 16px;">Absolutely! We encourage all members to visit before committing. You can book a free guided tour through our website or by calling us directly.</div></div>
+                        </div>
+                        <div class="accordion-item" style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--r-md);margin-bottom:12px;overflow:hidden;">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pf3" style="background:transparent;color:var(--text-1);font-weight:600;padding:16px 20px;box-shadow:none;">Are prices negotiable?</button></h2>
+                            <div id="pf3" class="accordion-collapse collapse" data-bs-parent="#propFaq"><div class="accordion-body" style="color:var(--text-3);font-size:var(--fs-sm);line-height:1.7;padding:0 20px 16px;">We offer competitive pricing and flexible terms. For annual commitments or enterprise plans, we can customize pricing. Contact our sales team for details.</div></div>
+                        </div>
+                        <div class="accordion-item" style="background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--r-md);margin-bottom:12px;overflow:hidden;">
+                            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pf4" style="background:transparent;color:var(--text-1);font-weight:600;padding:16px 20px;box-shadow:none;">What's included in the rent?</button></h2>
+                            <div id="pf4" class="accordion-collapse collapse" data-bs-parent="#propFaq"><div class="accordion-body" style="color:var(--text-3);font-size:var(--fs-sm);line-height:1.7;padding:0 20px 16px;">All properties include high-speed WiFi, electricity, maintenance, cleaning, and access to common areas. Additional amenities like meeting rooms and parking may have separate charges.</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section id="contact" class="cta-section section-padding">
+        <div class="container">
+            <div class="cta-box" data-aos="zoom-in">
+                <h2 class="reveal">Ready to Find Your Dream Workspace?</h2>
+                <p class="reveal" style="--reveal-delay: 0.1s">Join thousands of professionals who have already discovered the perfect workspace with WorkNest. Book a free tour today and experience the difference.</p>
+                <div class="cta-buttons reveal" style="--reveal-delay: 0.2s">
+                    <a href="properties.html" class="custom-btn magnetic-btn">Explore Spaces</a>
+                    <a href="book-tour.html" class="btn-outline-glass">Book a Tour</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <div class="nav-brand-icon" style="width:30px; height:30px; font-size:14px;">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                        <span class="nav-brand" style="font-size:1.1rem;">Work<span>Nest</span></span>
+                    </div>
+                    <p class="footer-brand p-0" style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7; max-width:280px;">Premium co-working spaces designed for modern professionals. Elevate your work experience with WorkNest.</p>
+                    <div class="footer-socials mt-3">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h6>Quick Links</h6>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="space-types.html">Space Types</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h6>Contact</h6>
+                    <ul>
+                        <li><i class="bi bi-envelope-fill" style="color:var(--primary);"></i> hello@worknest.com</li>
+                        <li><i class="bi bi-telephone-fill" style="color:var(--primary);"></i> +91 98765 43210</li>
+                        <li><i class="bi bi-geo-alt-fill" style="color:var(--primary);"></i> 42 Business Park, Koramangala, Bangalore 560034</li>
+                    </ul>
+                </div>
+                <div class="footer-cities">
+                    <h6>Our Cities</h6>
+                    <ul>
+                        <li><a href="#">Mumbai</a></li>
+                        <li><a href="#">Delhi</a></li>
+                        <li><a href="#">Bangalore</a></li>
+                        <li><a href="#">Hyderabad</a></li>
+                        <li><a href="#">Pune</a></li>
+                        <li><a href="#">Chennai</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WorkNest. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== BACK TO TOP ==================== -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            var loader = document.getElementById('loader');
+            if (loader) loader.style.display = 'none';
+
+            AOS.init({ duration: 800, once: true, offset: 100 });
+
+            // Back to Top
+            var backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+            backToTop.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Navbar scroll
+            var navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Filter buttons
+            var filterBtns = document.querySelectorAll('.filter-btn');
+            var cards = document.querySelectorAll('.property-card');
+            var noResults = document.getElementById('noResults');
+            var searchInput = document.getElementById('searchInput');
+
+            function applyFilters() {
+                var activeType = document.querySelector('.filter-btn.active').getAttribute('data-type');
+                var searchTerm = searchInput.value.toLowerCase().trim();
+                var visibleCount = 0;
+
+                cards.forEach(function (card) {
+                    var cardType = card.getAttribute('data-type');
+                    var text = card.textContent.toLowerCase();
+                    var typeMatch = activeType === 'all' || cardType === activeType;
+                    var searchMatch = !searchTerm || text.indexOf(searchTerm) !== -1;
+
+                    if (typeMatch && searchMatch) {
+                        card.style.display = '';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                if (visibleCount === 0) {
+                    noResults.classList.add('visible');
+                } else {
+                    noResults.classList.remove('visible');
+                }
+            }
+
+            filterBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    filterBtns.forEach(function (b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+                    applyFilters();
+                });
+            });
+
+            searchInput.addEventListener('input', applyFilters);
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

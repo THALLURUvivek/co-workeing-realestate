@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | WorkNest</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor" aria-hidden="true"></div>
+    <div class="custom-cursor-outline" id="customCursorOutline" aria-hidden="true"></div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-brand">Work<span>Nest</span></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-building"></i>
+                <span class="brand-text">Work<span>Nest</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="properties.html">Properties</a></li>
+                    <li class="nav-item"><a class="nav-link" href="space-types.html">Space Types</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-2">
+                  <a href="signin.html" class="btn btn-outline-custom">Sign In</a>
+                  <a href="signup.html" class="btn btn-primary">Sign Up</a>
+                  <a href="book-tour.html" class="btn btn-outline-custom">Book a Tour</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <span class="section-label" data-aos="fade-up" data-aos-delay="0">ABOUT US</span>
+            <h1 data-aos="fade-up" data-aos-delay="100">About WorkNest</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Redefining workspaces for the modern professional</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section>
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?fm=webp&w=800&q=80" alt="Modern office workspace" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <span class="section-label">OUR STORY</span>
+                    <h2 class="section-title">Creating Innovative Workspaces</h2>
+                    <p class="section-desc">At WorkNest, our mission is to transform the way people work by building thoughtfully designed spaces that inspire creativity, foster collaboration, and drive productivity.</p>
+                    <p class="section-desc mt-3">Every detail of our spaces is crafted with care — from ergonomic furniture and high-speed internet to collaborative zones and private meeting rooms. We provide everything you need so you can focus on what matters most.</p>
+                    <div class="d-flex flex-column gap-3 mt-4">
+                        <div class="highlight-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="highlight-icon"><i class="bi bi-check-circle-fill"></i></div>
+                            <span>Flexible Lease Terms &amp; Premium Amenities</span>
+                        </div>
+                        <div class="highlight-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="highlight-icon"><i class="bi bi-check-circle-fill"></i></div>
+                            <span>Trusted by 10,000+ Professionals Nationwide</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section>
+        <div class="container text-center">
+            <span class="section-label" data-aos="fade-up">OUR VALUES</span>
+            <h2 class="section-title mb-5" data-aos="fade-up" data-aos-delay="100">What Drives Us Forward</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass glass-hover" style="padding:40px 28px; text-align:center; height:100%;">
+                        <div class="service-icon mx-auto mb-4">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h4 style="color:var(--text-1); font-weight:700;">Innovation</h4>
+                        <p style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7; margin-top:8px;">We constantly push boundaries with smart technology, modern design, and forward-thinking solutions for the modern workplace.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass glass-hover" style="padding:40px 28px; text-align:center; height:100%;">
+                        <div class="service-icon mx-auto mb-4">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+                        <h4 style="color:var(--text-1); font-weight:700;">Community</h4>
+                        <p style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7; margin-top:8px;">We build spaces that bring people together, fostering meaningful connections and a sense of belonging among every member.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="glass glass-hover" style="padding:40px 28px; text-align:center; height:100%;">
+                        <div class="service-icon mx-auto mb-4">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <h4 style="color:var(--text-1); font-weight:700;">Quality</h4>
+                        <p style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7; margin-top:8px;">Premium materials, meticulous craftsmanship, and an unwavering attention to detail define every workspace we create.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section>
+        <div class="container text-center">
+            <span class="section-label" data-aos="fade-up">OUR TEAM</span>
+            <h2 class="section-title mb-5" data-aos="fade-up" data-aos-delay="100">Meet Our Team</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass glass-hover" style="padding:32px 24px; text-align:center;">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fm=webp&w=200&q=80" alt="Vikram Singh" style="width:96px; height:96px; border-radius:50%; object-fit:cover; border:3px solid var(--glass-border); margin:0 auto 16px;">
+                        <h5 style="color:var(--text-1); font-weight:700; margin-bottom:4px;">Vikram Singh</h5>
+                        <p style="color:var(--primary-400); font-size:var(--fs-sm); font-weight:500;">Founder &amp; CEO</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass glass-hover" style="padding:32px 24px; text-align:center;">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=webp&w=200&q=80" alt="Priya Desai" style="width:96px; height:96px; border-radius:50%; object-fit:cover; border:3px solid var(--glass-border); margin:0 auto 16px;">
+                        <h5 style="color:var(--text-1); font-weight:700; margin-bottom:4px;">Priya Desai</h5>
+                        <p style="color:var(--primary-400); font-size:var(--fs-sm); font-weight:500;">Head of Operations</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="glass glass-hover" style="padding:32px 24px; text-align:center;">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fm=webp&w=200&q=80" alt="Arjun Nair" style="width:96px; height:96px; border-radius:50%; object-fit:cover; border:3px solid var(--glass-border); margin:0 auto 16px;">
+                        <h5 style="color:var(--text-1); font-weight:700; margin-bottom:4px;">Arjun Nair</h5>
+                        <p style="color:var(--primary-400); font-size:var(--fs-sm); font-weight:500;">Lead Designer</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="glass glass-hover" style="padding:32px 24px; text-align:center;">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?fm=webp&w=200&q=80" alt="Sneha Kapoor" style="width:96px; height:96px; border-radius:50%; object-fit:cover; border:3px solid var(--glass-border); margin:0 auto 16px;">
+                        <h5 style="color:var(--text-1); font-weight:700; margin-bottom:4px;">Sneha Kapoor</h5>
+                        <p style="color:var(--primary-400); font-size:var(--fs-sm); font-weight:500;">Community Manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section style="padding:60px 0; position:relative; z-index:1;">
+        <div class="container">
+            <div class="row g-4" data-aos="fade-up">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-box">
+                        <h3>2019</h3>
+                        <span>Founded</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-box">
+                        <h3>50+</h3>
+                        <span>Cities Across India</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-box">
+                        <h3>10K+</h3>
+                        <span>Happy Members</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-box">
+                        <h3>200+</h3>
+                        <span>Workspaces</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workspace Gallery -->
+    <section style="padding:80px 0; position:relative; z-index:1;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-label" data-aos="fade-up">OUR SPACES</span>
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">A Glimpse Inside WorkNest</h2>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div style="border-radius:var(--r-lg);overflow:hidden;height:250px;border:1px solid var(--glass-border);">
+                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?fm=webp&w=600&q=80" alt="Open workspace area" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div style="border-radius:var(--r-lg);overflow:hidden;height:250px;border:1px solid var(--glass-border);">
+                        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?fm=webp&w=600&q=80" alt="Collaborative lounge" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div style="border-radius:var(--r-lg);overflow:hidden;height:250px;border:1px solid var(--glass-border);">
+                        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?fm=webp&w=600&q=80" alt="Meeting room setup" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div style="border-radius:var(--r-lg);overflow:hidden;height:250px;border:1px solid var(--glass-border);">
+                        <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?fm=webp&w=600&q=80" alt="Private cabin interior" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div style="border-radius:var(--r-lg);overflow:hidden;height:250px;border:1px solid var(--glass-border);">
+                        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?fm=webp&w=600&q=80" alt="Community event space" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section style="padding:80px 0; position:relative; z-index:1;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-label" data-aos="fade-up">OUR JOURNEY</span>
+                <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Milestones That Define Us</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+                    <div style="position:relative; padding-left:40px;">
+                        <div style="position:absolute; left:15px; top:0; bottom:0; width:2px; background:var(--glass-border);"></div>
+
+                        <div style="position:relative; margin-bottom:40px;">
+                            <div style="position:absolute; left:-33px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--primary); border:3px solid var(--bg-0);"></div>
+                            <span style="color:var(--primary-400); font-size:var(--fs-xs); font-weight:600; letter-spacing:1px;">2019</span>
+                            <h4 style="color:var(--text-1); font-weight:700; margin:6px 0 4px;">Founded in Bangalore</h4>
+                            <p style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7;">Started with a single location in Koramangala, serving 50 early members with a vision to redefine workspaces.</p>
+                        </div>
+
+                        <div style="position:relative; margin-bottom:40px;">
+                            <div style="position:absolute; left:-33px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--primary); border:3px solid var(--bg-0);"></div>
+                            <span style="color:var(--primary-400); font-size:var(--fs-xs); font-weight:600; letter-spacing:1px;">2021</span>
+                            <h4 style="color:var(--text-1); font-weight:700; margin:6px 0 4px;">Expanded to 5 Cities</h4>
+                            <p style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7;">Opened locations in Mumbai, Delhi, Hyderabad, and Pune. Crossed 2,000 members across all locations.</p>
+                        </div>
+
+                        <div style="position:relative; margin-bottom:40px;">
+                            <div style="position:absolute; left:-33px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--primary); border:3px solid var(--bg-0);"></div>
+                            <span style="color:var(--primary-400); font-size:var(--fs-xs); font-weight:600; letter-spacing:1px;">2023</span>
+                            <h4 style="color:var(--text-1); font-weight:700; margin:6px 0 4px;">Series A Funding</h4>
+                            <p style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7;">Raised $12M in Series A to fuel expansion. Launched premium enterprise solutions and virtual office products.</p>
+                        </div>
+
+                        <div style="position:relative;">
+                            <div style="position:absolute; left:-33px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--primary); border:3px solid var(--bg-0);"></div>
+                            <span style="color:var(--primary-400); font-size:var(--fs-xs); font-weight:600; letter-spacing:1px;">2026</span>
+                            <h4 style="color:var(--text-1); font-weight:700; margin:6px 0 4px;">50+ Cities &amp; Growing</h4>
+                            <p style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7;">Now serving 10,000+ members across 200+ workspaces in 50+ cities. Continuing to innovate and expand.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box" data-aos="zoom-in">
+                <h2>Join Our Growing Community</h2>
+                <p>Be part of a vibrant network of professionals, entrepreneurs, and creators who are redefining the future of work with WorkNest.</p>
+                <div class="cta-buttons">
+                    <a href="book-tour.html" class="btn btn-primary">Book a Tour</a>
+                    <a href="properties.html" class="btn btn-outline">Explore Spaces</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <div class="nav-brand-icon" style="width:30px; height:30px; font-size:14px;">
+                            <i class="fa-solid fa-building"></i>
+                        </div>
+                        <span class="nav-brand" style="font-size:1.1rem;">Work<span>Nest</span></span>
+                    </div>
+                    <p class="footer-brand p-0" style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7; max-width:280px;">Premium co-working spaces designed for modern professionals. Elevate your work experience with WorkNest.</p>
+                    <div class="footer-socials mt-3">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h6>Quick Links</h6>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="space-types.html">Space Types</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h6>Contact</h6>
+                    <ul>
+                        <li><i class="bi bi-envelope-fill" style="color:var(--primary);"></i> hello@worknest.com</li>
+                        <li><i class="bi bi-telephone-fill" style="color:var(--primary);"></i> +91 98765 43210</li>
+                        <li><i class="bi bi-geo-alt-fill" style="color:var(--primary);"></i> 42 Business Park, Koramangala, Bangalore 560034</li>
+                    </ul>
+                </div>
+                <div class="footer-cities">
+                    <h6>Our Cities</h6>
+                    <ul>
+                        <li><a href="#">Mumbai</a></li>
+                        <li><a href="#">Delhi</a></li>
+                        <li><a href="#">Bangalore</a></li>
+                        <li><a href="#">Hyderabad</a></li>
+                        <li><a href="#">Pune</a></li>
+                        <li><a href="#">Chennai</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WorkNest. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 80, delay: 0, duration: 800, easing: 'ease-in-cubic', once: true });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -345,3 +345,35 @@
     justify-content: center;
   }
 }
+
+/* ─── Centered Section Paragraphs ─── */
+
+.section-desc {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* ─── Centered Footer ─── */
+
+.footer { text-align: center; }
+
+.footer-brand p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-socials { justify-content: center; }
+
+.footer-links h6::after,
+.footer-contact h6::after,
+.footer-cities h6::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.footer-contact li { justify-content: center; }
+
+.footer-cities ul { justify-content: center; }
+
+.footer-bottom { justify-content: center; }

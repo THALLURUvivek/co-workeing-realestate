@@ -136,11 +136,11 @@
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" class="dash-search-input" placeholder="Search anything...">
           </div>
-          <button class="dash-topbar-btn" aria-label="Notifications">
+          <button class="dash-topbar-btn" aria-label="Notifications" data-error="Notifications">
             <i class="fa-regular fa-bell"></i>
             <span class="badge-dot"></span>
           </button>
-          <button class="dash-topbar-btn" aria-label="Messages">
+          <button class="dash-topbar-btn" aria-label="Messages" data-error="Messages">
             <i class="fa-regular fa-envelope"></i>
           </button>
         </div>
@@ -227,7 +227,7 @@
             <div class="dash-card" data-aos="fade-up" data-aos-delay="100">
               <div class="dash-card-header">
                 <h3 class="dash-card-title">Recent Activity</h3>
-                <a href="#" class="dash-card-action">View All <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#" class="dash-card-action" data-error="Activity History">View All <i class="fa-solid fa-arrow-right"></i></a>
               </div>
               <div class="dash-card-body">
                 <ul class="dash-activity-list">
@@ -454,7 +454,7 @@
                       <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;299</td>
                       <td data-label="Status"><span class="dash-status active">Active</span></td>
                       <td data-label="Action">
-                        <button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button>
+                        <button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details" data-error="Booking Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button>
                       </td>
                     </tr>
                     <tr data-status="active" data-city="mumbai">
@@ -474,7 +474,7 @@
                       <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;599</td>
                       <td data-label="Status"><span class="dash-status pending">Pending</span></td>
                       <td data-label="Action">
-                        <button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button>
+                        <button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details" data-error="Booking Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button>
                       </td>
                     </tr>
                     <tr data-status="completed" data-city="delhi">
@@ -494,7 +494,7 @@
                       <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;4,500</td>
                       <td data-label="Status"><span class="dash-status completed">Completed</span></td>
                       <td data-label="Action">
-                        <button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button>
+                        <button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details" data-error="Booking Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button>
                       </td>
                     </tr>
                     <tr data-status="completed" data-city="bangalore">
@@ -514,7 +514,7 @@
                       <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;299</td>
                       <td data-label="Status"><span class="dash-status completed">Completed</span></td>
                       <td data-label="Action">
-                        <button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button>
+                        <button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details" data-error="Booking Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button>
                       </td>
                     </tr>
                     <tr data-status="cancelled" data-city="pune">
@@ -534,7 +534,7 @@
                       <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;150</td>
                       <td data-label="Status"><span class="dash-status cancelled">Cancelled</span></td>
                       <td data-label="Action">
-                        <button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button>
+                        <button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details" data-error="Booking Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button>
                       </td>
                     </tr>
                     <tr data-status="completed" data-city="hyderabad">
@@ -554,7 +554,7 @@
                       <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;799</td>
                       <td data-label="Status"><span class="dash-status completed">Completed</span></td>
                       <td data-label="Action">
-                        <button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button>
+                        <button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details" data-error="Booking Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button>
                       </td>
                     </tr>
                   </tbody>
@@ -714,7 +714,7 @@
                       <td data-label="Date">Aug 20, 2026</td>
                       <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;4,200</td>
                       <td data-label="Status"><span class="dash-status active">Paid</span></td>
-                      <td data-label="Action"><button class="dash-topbar-btn" style="width:auto;padding:6px 14px;font-size:var(--fs-xs);gap:6px;"><i class="fa-solid fa-download"></i> Download</button></td>
+                      <td data-label="Action"><button class="dash-topbar-btn" style="width:auto;padding:6px 14px;font-size:var(--fs-xs);gap:6px;" data-error="Invoice Download"><i class="fa-solid fa-download"></i> Download</button></td>
                     </tr>
                     <tr>
                       <td data-label="Invoice ID" style="font-weight:600;">INV-2026-007</td>
@@ -729,7 +729,7 @@
                       <td data-label="Date">Jul 15, 2026</td>
                       <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;599</td>
                       <td data-label="Status"><span class="dash-status active">Paid</span></td>
-                      <td data-label="Action"><button class="dash-topbar-btn" style="width:auto;padding:6px 14px;font-size:var(--fs-xs);gap:6px;"><i class="fa-solid fa-download"></i> Download</button></td>
+                      <td data-label="Action"><button class="dash-topbar-btn" style="width:auto;padding:6px 14px;font-size:var(--fs-xs);gap:6px;" data-error="Invoice Download"><i class="fa-solid fa-download"></i> Download</button></td>
                     </tr>
                     <tr>
                       <td data-label="Invoice ID" style="font-weight:600;">INV-2026-006</td>
@@ -744,7 +744,7 @@
                       <td data-label="Date">Jun 01, 2026</td>
                       <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;4,500</td>
                       <td data-label="Status"><span class="dash-status active">Paid</span></td>
-                      <td data-label="Action"><button class="dash-topbar-btn" style="width:auto;padding:6px 14px;font-size:var(--fs-xs);gap:6px;"><i class="fa-solid fa-download"></i> Download</button></td>
+                      <td data-label="Action"><button class="dash-topbar-btn" style="width:auto;padding:6px 14px;font-size:var(--fs-xs);gap:6px;" data-error="Invoice Download"><i class="fa-solid fa-download"></i> Download</button></td>
                     </tr>
                     <tr>
                       <td data-label="Invoice ID" style="font-weight:600;">INV-2026-009</td>
@@ -759,7 +759,7 @@
                       <td data-label="Date">Aug 18, 2026</td>
                       <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;799</td>
                       <td data-label="Status"><span class="dash-status pending">Pending</span></td>
-                      <td data-label="Action"><button class="dash-topbar-btn" style="width:auto;padding:6px 14px;font-size:var(--fs-xs);gap:6px;"><i class="fa-solid fa-download"></i> Download</button></td>
+                      <td data-label="Action"><button class="dash-topbar-btn" style="width:auto;padding:6px 14px;font-size:var(--fs-xs);gap:6px;" data-error="Invoice Download"><i class="fa-solid fa-download"></i> Download</button></td>
                     </tr>
                     <tr>
                       <td data-label="Invoice ID" style="font-weight:600;">INV-2026-005</td>
@@ -774,7 +774,7 @@
                       <td data-label="Date">May 10, 2026</td>
                       <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;150</td>
                       <td data-label="Status"><span class="dash-status cancelled">Overdue</span></td>
-                      <td data-label="Action"><button class="dash-topbar-btn" style="width:auto;padding:6px 14px;font-size:var(--fs-xs);gap:6px;"><i class="fa-solid fa-download"></i> Download</button></td>
+                      <td data-label="Action"><button class="dash-topbar-btn" style="width:auto;padding:6px 14px;font-size:var(--fs-xs);gap:6px;" data-error="Invoice Download"><i class="fa-solid fa-download"></i> Download</button></td>
                     </tr>
                   </tbody>
                 </table>
@@ -833,7 +833,7 @@
                   <span style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);">&#8377;299/mo</span>
                 </div>
                 <div style="display:flex;gap:8px;">
-                  <a href="#" class="btn btn-primary" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;">View Details</a>
+                  <a href="#" class="btn btn-primary" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;" data-error="Property Details">View Details</a>
                   <a href="#" class="btn btn-outline" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;" data-section="tours">Book Tour</a>
                 </div>
               </div>
@@ -852,7 +852,7 @@
                   <span style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);">&#8377;599/mo</span>
                 </div>
                 <div style="display:flex;gap:8px;">
-                  <a href="#" class="btn btn-primary" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;">View Details</a>
+                  <a href="#" class="btn btn-primary" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;" data-error="Property Details">View Details</a>
                   <a href="#" class="btn btn-outline" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;" data-section="tours">Book Tour</a>
                 </div>
               </div>
@@ -871,7 +871,7 @@
                   <span style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);">&#8377;999/mo</span>
                 </div>
                 <div style="display:flex;gap:8px;">
-                  <a href="#" class="btn btn-primary" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;">View Details</a>
+                  <a href="#" class="btn btn-primary" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;" data-error="Property Details">View Details</a>
                   <a href="#" class="btn btn-outline" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;" data-section="tours">Book Tour</a>
                 </div>
               </div>
@@ -890,7 +890,7 @@
                   <span style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);">&#8377;349/mo</span>
                 </div>
                 <div style="display:flex;gap:8px;">
-                  <a href="#" class="btn btn-primary" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;">View Details</a>
+                  <a href="#" class="btn btn-primary" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;" data-error="Property Details">View Details</a>
                   <a href="#" class="btn btn-outline" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;" data-section="tours">Book Tour</a>
                 </div>
               </div>
@@ -909,7 +909,7 @@
                   <span style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);">&#8377;799/mo</span>
                 </div>
                 <div style="display:flex;gap:8px;">
-                  <a href="#" class="btn btn-primary" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;">View Details</a>
+                  <a href="#" class="btn btn-primary" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;" data-error="Property Details">View Details</a>
                   <a href="#" class="btn btn-outline" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;" data-section="tours">Book Tour</a>
                 </div>
               </div>
@@ -928,7 +928,7 @@
                   <span style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);">&#8377;199/hr</span>
                 </div>
                 <div style="display:flex;gap:8px;">
-                  <a href="#" class="btn btn-primary" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;">View Details</a>
+                  <a href="#" class="btn btn-primary" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;" data-error="Property Details">View Details</a>
                   <a href="#" class="btn btn-outline" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;" data-section="tours">Book Tour</a>
                 </div>
               </div>
@@ -962,7 +962,7 @@
                   <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Free coffee & tea</li>
                   <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Community events</li>
                 </ul>
-                <a href="#" class="btn btn-primary" style="width:100%;text-align:center;">Book Now</a>
+                <a href="#" class="btn btn-primary" style="width:100%;text-align:center;" data-error="Online Booking">Book Now</a>
               </div>
             </div>
 
@@ -977,7 +977,7 @@
                   <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Lockable storage</li>
                   <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Meeting room access</li>
                 </ul>
-                <a href="#" class="btn btn-primary" style="width:100%;text-align:center;">Book Now</a>
+                <a href="#" class="btn btn-primary" style="width:100%;text-align:center;" data-error="Online Booking">Book Now</a>
               </div>
             </div>
 
@@ -992,7 +992,7 @@
                   <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Reception & mail handling</li>
                   <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Custom branding</li>
                 </ul>
-                <a href="#" class="btn btn-primary" style="width:100%;text-align:center;">Book Now</a>
+                <a href="#" class="btn btn-primary" style="width:100%;text-align:center;" data-error="Online Booking">Book Now</a>
               </div>
             </div>
 
@@ -1007,7 +1007,7 @@
                   <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Video conferencing</li>
                   <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Whiteboard & markers</li>
                 </ul>
-                <a href="#" class="btn btn-primary" style="width:100%;text-align:center;">Book Now</a>
+                <a href="#" class="btn btn-primary" style="width:100%;text-align:center;" data-error="Online Booking">Book Now</a>
               </div>
             </div>
 
@@ -1022,7 +1022,7 @@
                   <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> PA system & mic</li>
                   <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Catering available</li>
                 </ul>
-                <a href="#" class="btn btn-primary" style="width:100%;text-align:center;">Book Now</a>
+                <a href="#" class="btn btn-primary" style="width:100%;text-align:center;" data-error="Online Booking">Book Now</a>
               </div>
             </div>
 
@@ -1037,7 +1037,7 @@
                   <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Mail forwarding</li>
                   <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Call handling</li>
                 </ul>
-                <a href="#" class="btn btn-primary" style="width:100%;text-align:center;">Book Now</a>
+                <a href="#" class="btn btn-primary" style="width:100%;text-align:center;" data-error="Online Booking">Book Now</a>
               </div>
             </div>
 
@@ -1221,7 +1221,7 @@
           </div>
 
           <div data-aos="fade-up">
-            <button class="btn btn-primary" style="padding:12px 32px;font-size:var(--fs-sm);">Save Changes</button>
+            <button class="btn btn-primary" style="padding:12px 32px;font-size:var(--fs-sm);" data-error="Save Settings">Save Changes</button>
           </div>
 
         </div>
@@ -1465,6 +1465,15 @@
         this.reset();
       });
     }
+
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• UNAVAILABLE FEATURES â†’ ERROR PAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    document.addEventListener('click', function(e) {
+      var el = e.target.closest('[data-error]');
+      if (el) {
+        e.preventDefault();
+        window.location.href = 'error.html?type=feature&feature=' + encodeURIComponent(el.getAttribute('data-error')) + '&from=dashboard';
+      }
+    });
 
     // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• AOS INIT â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     AOS.init({ once: true, duration: 700, offset: 40 });

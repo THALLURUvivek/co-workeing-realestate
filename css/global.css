@@ -510,6 +510,14 @@ section {
   object-fit: contain;
 }
 
+/* Recolor cyan logo to brand green */
+.brand-logo,
+.loader-brand-logo,
+.auth-brand-logo,
+.dash-brand-logo {
+  filter: hue-rotate(-36deg) saturate(1.05);
+}
+
 .footer .brand-logo {
   height: 34px;
 }

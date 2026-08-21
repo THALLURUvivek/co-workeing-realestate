@@ -50,13 +50,15 @@
         </div>
     </nav>
 
-    <section style="min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 0;">
+    <section style="min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:calc(var(--nav-height) + 40px) 0 40px;">
         <div class="container">
-            <div data-aos="fade-up" style="font-size:clamp(6rem,15vw,12rem);font-weight:900;line-height:1;background:linear-gradient(135deg,var(--primary),var(--primary-400),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;">404</div>
-            <h1 data-aos="fade-up" data-aos-delay="100" style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:var(--text-1);margin-bottom:16px;">Page Not Found</h1>
-            <p data-aos="fade-up" data-aos-delay="200" style="color:var(--text-3);font-size:var(--fs-md);max-width:480px;margin:0 auto 2rem;">The page you're looking for doesn't exist or has been moved to a new location.</p>
-            <div data-aos="fade-up" data-aos-delay="300">
+            <div data-aos="fade-up" id="errorCode" style="font-size:clamp(6rem,15vw,12rem);font-weight:900;line-height:1;background:linear-gradient(135deg,var(--primary),var(--primary-400),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px;">404</div>
+            <h1 data-aos="fade-up" data-aos-delay="100" id="errorTitle" style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:var(--text-1);margin-bottom:16px;">Page Not Found</h1>
+            <p data-aos="fade-up" data-aos-delay="200" id="errorDesc" style="color:var(--text-3);font-size:var(--fs-md);max-width:480px;margin:0 auto 2rem;">The page you're looking for doesn't exist or has been moved to a new location.</p>
+            <div data-aos="fade-up" data-aos-delay="300" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                <button type="button" class="btn btn-ghost" onclick="history.back()"><i class="bi bi-arrow-left me-2"></i>Go Back</button>
                 <a href="index.html" class="btn btn-primary"><i class="bi bi-house me-2"></i>Go Home</a>
+                <a href="signin.html" class="btn btn-outline-custom" id="ctxBackBtn" style="display:none;"><i class="bi bi-box-arrow-in-right me-2"></i>Back to Sign In</a>
             </div>
         </div>
     </section>
@@ -64,6 +66,47 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init({offset:80,delay:0,duration:800,easing:'ease-in-cubic',once:true});</script>
+    <script>
+        (function () {
+            var params = new URLSearchParams(window.location.search);
+            var type = params.get('type');
+            var provider = params.get('provider') || 'Social';
+            var from = params.get('from');
+
+            if (type === 'social') {
+                document.title = provider + ' Sign-In Unavailable | WorkNest';
+                document.getElementById('errorCode').textContent = 'Oops!';
+                document.getElementById('errorTitle').textContent = provider + ' Sign-In Unavailable';
+                document.getElementById('errorDesc').textContent = provider + ' authentication is not available yet. Please continue with your email and password instead.';
+                var backBtn = document.getElementById('ctxBackBtn');
+                if (from === 'signup') {
+                    backBtn.href = 'signup.html';
+                    backBtn.innerHTML = '<i class="bi bi-person-plus me-2"></i>Back to Sign Up';
+                } else {
+                    backBtn.href = 'signin.html';
+                    backBtn.innerHTML = '<i class="bi bi-box-arrow-in-right me-2"></i>Back to Sign In';
+                }
+                backBtn.style.display = 'inline-flex';
+            }
+
+            if (type === 'feature') {
+                var feature = params.get('feature') || 'This';
+                document.title = feature + ' Coming Soon | WorkNest';
+                document.getElementById('errorCode').textContent = 'Oops!';
+                document.getElementById('errorTitle').textContent = feature + ' Coming Soon';
+                document.getElementById('errorDesc').textContent = 'The ' + feature.toLowerCase() + ' feature is under development and will be available soon. Stay tuned!';
+                var backBtn2 = document.getElementById('ctxBackBtn');
+                if (from === 'dashboard') {
+                    backBtn2.href = 'dashboard.html';
+                    backBtn2.innerHTML = '<i class="bi bi-speedometer2 me-2"></i>Back to Dashboard';
+                } else {
+                    backBtn2.href = 'index.html';
+                    backBtn2.innerHTML = '<i class="bi bi-house me-2"></i>Go Home';
+                }
+                backBtn2.style.display = 'inline-flex';
+            }
+        })();
+    </script>
     <script src="js/script.js"></script>
 </body>
 </html>

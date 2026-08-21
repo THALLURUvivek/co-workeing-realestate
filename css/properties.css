@@ -3,6 +3,41 @@
    Glassmorphism Dark Theme • Page-specific styles
    ====================================================== */
 
+/* ─── Page Banner with Image ─── */
+
+.properties-banner {
+  padding: calc(var(--nav-height) + 90px) 0 90px;
+  overflow: hidden;
+}
+
+.properties-banner-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.properties-banner-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  opacity: 0.28;
+}
+
+.properties-banner-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(5, 10, 24, 0.55), rgba(5, 10, 24, 0.92)),
+    radial-gradient(ellipse 60% 50% at 50% 30%, rgba(var(--primary-rgb), 0.12), transparent);
+}
+
+.properties-banner .container {
+  position: relative;
+  z-index: 1;
+}
+
 /* ─── Filter Bar ─── */
 
 .filter-bar {
@@ -120,6 +155,30 @@
 /* ─── Load More ─── */
 
 .load-more-wrap { text-align: center; margin-top: 48px; }
+
+/* ─── Centered Footer (matches home page) ─── */
+
+.footer { text-align: center; }
+
+.footer-brand p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-socials { justify-content: center; }
+
+.footer-links h6::after,
+.footer-contact h6::after,
+.footer-cities h6::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.footer-contact li { justify-content: center; }
+
+.footer-cities ul { justify-content: center; }
+
+.footer-bottom { justify-content: center; }
 
 /* ─── Responsive ─── */
 

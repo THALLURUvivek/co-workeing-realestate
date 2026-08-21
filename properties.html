@@ -47,16 +47,24 @@
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
-                <a href="book-tour.html" class="btn btn-primary">Book a Tour</a>
+                <div class="d-flex align-items-center gap-2">
+                    <a href="signin.html" class="btn btn-outline-custom">Sign In</a>
+                    <a href="signup.html" class="btn btn-primary">Sign Up</a>
+                    <a href="book-tour.html" class="btn btn-primary">Book a Tour</a>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- ==================== PAGE BANNER ==================== -->
-    <section class="page-banner">
+    <section class="page-banner properties-banner">
+        <div class="properties-banner-bg" aria-hidden="true">
+            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?fm=webp&w=1920&q=80" alt="" loading="eager">
+        </div>
         <div class="container">
-            <h1 data-aos="fade-up">Our Properties</h1>
-            <p data-aos="fade-up" data-aos-delay="100">Browse our curated collection of premium workspaces designed for modern professionals</p>
+            <span class="section-label" data-aos="fade-up">Premium Workspaces</span>
+            <h1 data-aos="fade-up" data-aos-delay="100">Our Properties</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Browse our curated collection of premium workspaces designed for modern professionals</p>
         </div>
     </section>
 
@@ -446,7 +454,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="d-flex align-items-center gap-2 mb-3">
+                    <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
                         <img src="images/image.png" alt="WorkNest" class="brand-logo">
                     </div>
                     <p class="footer-brand p-0" style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7; max-width:280px;">Premium co-working spaces designed for modern professionals. Elevate your work experience with WorkNest.</p>

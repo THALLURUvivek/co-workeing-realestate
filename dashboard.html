@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | WorkNest</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <!-- Sidebar Overlay (Mobile) -->
+  <div class="dash-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="dash-layout">
+
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• SIDEBAR â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div class="dash-sidebar-header">
+        <a href="index.html" class="dash-sidebar-brand">
+          <img src="images/image.png" alt="WorkNest" class="dash-brand-logo">
+        </a>
+      </div>
+
+      <nav class="dash-sidebar-nav">
+        <div class="dash-nav-label">Main</div>
+
+        <div class="dash-nav-item">
+          <a href="#" class="dash-nav-link active" data-section="overview">
+            <i class="fa-solid fa-grid-2"></i>
+            <span>Overview</span>
+          </a>
+        </div>
+
+        <div class="dash-nav-item">
+          <a href="#" class="dash-nav-link" data-section="bookings">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>My Bookings</span>
+            <span class="dash-nav-badge">3</span>
+          </a>
+        </div>
+
+        <div class="dash-nav-item">
+          <a href="#" class="dash-nav-link" data-section="favorites">
+            <i class="fa-regular fa-heart"></i>
+            <span>Favorites</span>
+          </a>
+        </div>
+
+        <div class="dash-nav-item">
+          <a href="#" class="dash-nav-link" data-section="billing">
+            <i class="fa-solid fa-receipt"></i>
+            <span>Billing</span>
+          </a>
+        </div>
+
+        <div class="dash-nav-label">Explore</div>
+
+        <div class="dash-nav-item">
+          <a href="#" class="dash-nav-link" data-section="properties">
+            <i class="fa-solid fa-building"></i>
+            <span>Properties</span>
+          </a>
+        </div>
+
+        <div class="dash-nav-item">
+          <a href="#" class="dash-nav-link" data-section="spaces">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Space Types</span>
+          </a>
+        </div>
+
+        <div class="dash-nav-item">
+          <a href="#" class="dash-nav-link" data-section="tours">
+            <i class="fa-solid fa-car"></i>
+            <span>Book a Tour</span>
+          </a>
+        </div>
+
+        <div class="dash-nav-label">Account</div>
+
+        <div class="dash-nav-item">
+          <a href="#" class="dash-nav-link" data-section="settings">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+          </a>
+        </div>
+
+        <div class="dash-nav-item">
+          <a href="#" class="dash-nav-link" data-section="support">
+            <i class="fa-solid fa-headset"></i>
+            <span>Support</span>
+          </a>
+        </div>
+
+        <div class="dash-nav-item">
+          <a href="index.html" class="dash-nav-link">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span>Sign Out</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="dash-sidebar-footer">
+        <div class="dash-user-card">
+          <div class="dash-user-avatar">VK</div>
+          <div class="dash-user-info">
+            <div class="dash-user-name">Vivek Kumar</div>
+            <div class="dash-user-role">Pro Member</div>
+          </div>
+          <i class="fa-solid fa-ellipsis-vertical" style="color:var(--text-4);font-size:0.85rem;"></i>
+        </div>
+      </div>
+    </aside>
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• END SIDEBAR â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+
+    <!-- Main Content -->
+    <main class="dash-main">
+
+      <!-- Top Bar -->
+      <header class="dash-topbar">
+        <div class="dash-topbar-left">
+          <button class="dash-sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h1 class="dash-page-title" id="pageTitle">Overview</h1>
+        </div>
+        <div class="dash-topbar-right">
+          <div class="dash-search-wrap">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" class="dash-search-input" placeholder="Search anything...">
+          </div>
+          <button class="dash-topbar-btn" aria-label="Notifications">
+            <i class="fa-regular fa-bell"></i>
+            <span class="badge-dot"></span>
+          </button>
+          <button class="dash-topbar-btn" aria-label="Messages">
+            <i class="fa-regular fa-envelope"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="dash-content">
+
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• OVERVIEW â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        <div class="dash-section" id="sec-overview">
+
+          <div class="dash-welcome" data-aos="fade-up">
+            <h2>Good Morning, Vivek!</h2>
+            <p>You have <strong>2 active bookings</strong> and <strong>1 upcoming tour</strong> this week. Here's what's happening with your workspaces.</p>
+            <p class="dash-welcome-date" style="margin-top:12px;font-size:var(--fs-xs);"><i class="fa-regular fa-calendar"></i> Thursday, August 20, 2026</p>
+          </div>
+
+          <div class="dash-stats">
+            <div class="dash-stat-card" data-aos="fade-up" data-aos-delay="0">
+              <div class="dash-stat-icon green"><i class="fa-solid fa-calendar-check"></i></div>
+              <div class="dash-stat-value">2</div>
+              <div class="dash-stat-label">Active Bookings</div>
+              <div class="dash-stat-change up"><i class="fa-solid fa-arrow-up"></i> 1 new this month</div>
+            </div>
+            <div class="dash-stat-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="dash-stat-icon blue"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+              <div class="dash-stat-value">&#8377;12,400</div>
+              <div class="dash-stat-label">Total Spent</div>
+              <div class="dash-stat-change up"><i class="fa-solid fa-arrow-down"></i> 8% less than last month</div>
+            </div>
+            <div class="dash-stat-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="dash-stat-icon amber"><i class="fa-regular fa-heart"></i></div>
+              <div class="dash-stat-value">5</div>
+              <div class="dash-stat-label">Saved Spaces</div>
+              <div class="dash-stat-change up"><i class="fa-solid fa-arrow-up"></i> 2 new saves</div>
+            </div>
+            <div class="dash-stat-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="dash-stat-icon purple"><i class="fa-solid fa-car"></i></div>
+              <div class="dash-stat-value">1</div>
+              <div class="dash-stat-label">Upcoming Tours</div>
+              <div class="dash-stat-change up">Aug 23, 2026</div>
+            </div>
+          </div>
+
+          <div class="dash-grid">
+            <div class="dash-card" data-aos="fade-up">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title">Quick Actions</h3>
+              </div>
+              <div class="dash-card-body">
+                <div class="dash-quick-actions">
+                  <a href="#" class="dash-quick-action" data-section="tours">
+                    <div class="dash-quick-action-icon"><i class="fa-solid fa-calendar-plus"></i></div>
+                    <div>
+                      <div class="dash-quick-action-text">Book a Tour</div>
+                      <div class="dash-quick-action-desc">Schedule a free workspace visit</div>
+                    </div>
+                  </a>
+                  <a href="#" class="dash-quick-action" data-section="properties">
+                    <div class="dash-quick-action-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <div>
+                      <div class="dash-quick-action-text">Browse Spaces</div>
+                      <div class="dash-quick-action-desc">Explore 200+ premium workspaces</div>
+                    </div>
+                  </a>
+                  <a href="#" class="dash-quick-action" data-section="billing">
+                    <div class="dash-quick-action-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                    <div>
+                      <div class="dash-quick-action-text">View Invoices</div>
+                      <div class="dash-quick-action-desc">Check billing and payment history</div>
+                    </div>
+                  </a>
+                  <a href="#" class="dash-quick-action" data-section="support">
+                    <div class="dash-quick-action-icon"><i class="fa-solid fa-headset"></i></div>
+                    <div>
+                      <div class="dash-quick-action-text">Get Support</div>
+                      <div class="dash-quick-action-desc">Chat with our support team</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title">Recent Activity</h3>
+                <a href="#" class="dash-card-action">View All <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+              <div class="dash-card-body">
+                <ul class="dash-activity-list">
+                  <li class="dash-activity-item">
+                    <span class="dash-activity-dot green"></span>
+                    <div>
+                      <div class="dash-activity-text"><strong>Booking confirmed</strong> at The Hive, Bangalore</div>
+                      <div class="dash-activity-time">2 hours ago</div>
+                    </div>
+                  </li>
+                  <li class="dash-activity-item">
+                    <span class="dash-activity-dot blue"></span>
+                    <div>
+                      <div class="dash-activity-text"><strong>Payment received</strong> - &#8377;4,200 for December</div>
+                      <div class="dash-activity-time">1 day ago</div>
+                    </div>
+                  </li>
+                  <li class="dash-activity-item">
+                    <span class="dash-activity-dot amber"></span>
+                    <div>
+                      <div class="dash-activity-text"><strong>Tour scheduled</strong> at CoWork Arena, Mumbai</div>
+                      <div class="dash-activity-time">3 days ago</div>
+                    </div>
+                  </li>
+                  <li class="dash-activity-item">
+                    <span class="dash-activity-dot purple"></span>
+                    <div>
+                      <div class="dash-activity-text"><strong>Space saved</strong> - NestHub, Hyderabad</div>
+                      <div class="dash-activity-time">5 days ago</div>
+                    </div>
+                  </li>
+                  <li class="dash-activity-item">
+                    <span class="dash-activity-dot red"></span>
+                    <div>
+                      <div class="dash-activity-text"><strong>Booking cancelled</strong> at Workspace360, Pune</div>
+                      <div class="dash-activity-time">1 week ago</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-card" data-aos="fade-up" style="margin-bottom:32px;">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Upcoming Bookings</h3>
+              <a href="#" class="dash-card-action" data-section="bookings">Manage Bookings <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="dash-card-body">
+              <div class="dash-booking-mini">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?fm=webp&w=200&q=80" alt="The Hive" class="dash-booking-mini-img">
+                <div class="dash-booking-mini-info">
+                  <div class="dash-booking-mini-title">The Hive - Hot Desk</div>
+                  <div class="dash-booking-mini-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> Bangalore</span>
+                    <span><i class="fa-regular fa-calendar"></i> Aug 20 - Sep 19, 2026</span>
+                  </div>
+                </div>
+                <span class="dash-status active">Active</span>
+                <div class="dash-booking-mini-price">&#8377;299/mo</div>
+              </div>
+
+              <div class="dash-booking-mini">
+                <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?fm=webp&w=200&q=80" alt="CoWork Arena" class="dash-booking-mini-img">
+                <div class="dash-booking-mini-info">
+                  <div class="dash-booking-mini-title">CoWork Arena - Dedicated Desk</div>
+                  <div class="dash-booking-mini-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> Mumbai</span>
+                    <span><i class="fa-regular fa-calendar"></i> Sep 1 - Sep 30, 2026</span>
+                  </div>
+                </div>
+                <span class="dash-status pending">Pending</span>
+                <div class="dash-booking-mini-price">&#8377;599/mo</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-card" data-aos="fade-up">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Recently Viewed</h3>
+              <a href="#" class="dash-card-action" data-section="properties">Browse All <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="dash-card-body">
+              <div class="dash-table-wrap">
+                <table class="dash-table">
+                  <thead>
+                    <tr>
+                      <th>Property</th>
+                      <th>Type</th>
+                      <th>Price</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="Property">
+                        <div class="property-cell">
+                          <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?fm=webp&w=100&q=80" alt="The Hive" class="property-thumb">
+                          <div class="property-cell-info">
+                            <h6>The Hive</h6>
+                            <span><i class="fa-solid fa-location-dot" style="color:var(--primary);margin-right:4px;"></i> Bangalore</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td data-label="Type">Hot Desk</td>
+                      <td data-label="Price" style="color:var(--primary-400);font-weight:600;">&#8377;299/mo</td>
+                      <td data-label="Status"><span class="dash-status active">Booked</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Property">
+                        <div class="property-cell">
+                          <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?fm=webp&w=100&q=80" alt="CoWork Arena" class="property-thumb">
+                          <div class="property-cell-info">
+                            <h6>CoWork Arena</h6>
+                            <span><i class="fa-solid fa-location-dot" style="color:var(--primary);margin-right:4px;"></i> Mumbai</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td data-label="Type">Private Office</td>
+                      <td data-label="Price" style="color:var(--primary-400);font-weight:600;">&#8377;599/mo</td>
+                      <td data-label="Status"><span class="dash-status pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Property">
+                        <div class="property-cell">
+                          <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?fm=webp&w=100&q=80" alt="NestHub" class="property-thumb">
+                          <div class="property-cell-info">
+                            <h6>NestHub</h6>
+                            <span><i class="fa-solid fa-location-dot" style="color:var(--primary);margin-right:4px;"></i> Hyderabad</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td data-label="Type">Suite</td>
+                      <td data-label="Price" style="color:var(--primary-400);font-weight:600;">&#8377;799/mo</td>
+                      <td data-label="Status"><span class="dash-status completed">Saved</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• END OVERVIEW â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• BOOKINGS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        <div class="dash-section hidden" id="sec-bookings">
+
+          <div class="dash-stats" style="margin-bottom:28px;">
+            <div class="dash-stat-card" data-aos="fade-up">
+              <div class="dash-stat-icon green"><i class="fa-solid fa-calendar-check"></i></div>
+              <div class="dash-stat-value">2</div>
+              <div class="dash-stat-label">Active Bookings</div>
+            </div>
+            <div class="dash-stat-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="dash-stat-icon blue"><i class="fa-solid fa-clock-rotate-left"></i></div>
+              <div class="dash-stat-value">4</div>
+              <div class="dash-stat-label">Completed</div>
+            </div>
+            <div class="dash-stat-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="dash-stat-icon amber"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+              <div class="dash-stat-value">&#8377;12,400</div>
+              <div class="dash-stat-label">Total Spent</div>
+            </div>
+          </div>
+
+          <div class="dash-filters" data-aos="fade-up">
+            <button class="dash-filter-btn active" data-filter="all">All</button>
+            <button class="dash-filter-btn" data-filter="active">Active</button>
+            <button class="dash-filter-btn" data-filter="pending">Pending</button>
+            <button class="dash-filter-btn" data-filter="completed">Completed</button>
+            <button class="dash-filter-btn" data-filter="cancelled">Cancelled</button>
+
+            <select class="dash-filter-select" id="cityFilter">
+              <option value="all">All Cities</option>
+              <option value="bangalore">Bangalore</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="delhi">Delhi NCR</option>
+              <option value="hyderabad">Hyderabad</option>
+              <option value="pune">Pune</option>
+            </select>
+
+            <div class="dash-filter-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="bookingSearch" placeholder="Search bookings...">
+            </div>
+          </div>
+
+          <div class="dash-card" data-aos="fade-up">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">All Bookings <span style="color:var(--text-4);font-weight:400;font-size:var(--fs-sm);">(6)</span></h3>
+              <a href="#" class="dash-card-action" data-section="properties" style="background:var(--primary);color:white;padding:8px 18px;border-radius:var(--r-sm);font-size:var(--fs-sm);"><i class="fa-solid fa-plus"></i> New Booking</a>
+            </div>
+            <div class="dash-card-body" style="padding:0;">
+              <div class="dash-table-wrap">
+                <table class="dash-table" id="bookingsTable">
+                  <thead>
+                    <tr>
+                      <th>Property</th>
+                      <th>Type</th>
+                      <th>City</th>
+                      <th>Start Date</th>
+                      <th>End Date</th>
+                      <th>Amount</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr data-status="active" data-city="bangalore">
+                      <td data-label="Property">
+                        <div class="property-cell">
+                          <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?fm=webp&w=100&q=80" alt="The Hive" class="property-thumb">
+                          <div class="property-cell-info">
+                            <h6>The Hive</h6>
+                            <span>Koramangala, Bangalore</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td data-label="Type">Hot Desk</td>
+                      <td data-label="City">Bangalore</td>
+                      <td data-label="Start Date">Aug 20, 2026</td>
+                      <td data-label="End Date">Sep 19, 2026</td>
+                      <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;299</td>
+                      <td data-label="Status"><span class="dash-status active">Active</span></td>
+                      <td data-label="Action">
+                        <button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button>
+                      </td>
+                    </tr>
+                    <tr data-status="active" data-city="mumbai">
+                      <td data-label="Property">
+                        <div class="property-cell">
+                          <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?fm=webp&w=100&q=80" alt="CoWork Arena" class="property-thumb">
+                          <div class="property-cell-info">
+                            <h6>CoWork Arena</h6>
+                            <span>Bandra, Mumbai</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td data-label="Type">Dedicated Desk</td>
+                      <td data-label="City">Mumbai</td>
+                      <td data-label="Start Date">Sep 1, 2026</td>
+                      <td data-label="End Date">Sep 30, 2026</td>
+                      <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;599</td>
+                      <td data-label="Status"><span class="dash-status pending">Pending</span></td>
+                      <td data-label="Action">
+                        <button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button>
+                      </td>
+                    </tr>
+                    <tr data-status="completed" data-city="delhi">
+                      <td data-label="Property">
+                        <div class="property-cell">
+                          <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?fm=webp&w=100&q=80" alt="WorkNest Delhi" class="property-thumb">
+                          <div class="property-cell-info">
+                            <h6>WorkNest Delhi</h6>
+                            <span>Connaught Place, Delhi</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td data-label="Type">Private Office</td>
+                      <td data-label="City">Delhi NCR</td>
+                      <td data-label="Start Date">Jun 1, 2026</td>
+                      <td data-label="End Date">Jul 31, 2026</td>
+                      <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;4,500</td>
+                      <td data-label="Status"><span class="dash-status completed">Completed</span></td>
+                      <td data-label="Action">
+                        <button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button>
+                      </td>
+                    </tr>
+                    <tr data-status="completed" data-city="bangalore">
+                      <td data-label="Property">
+                        <div class="property-cell">
+                          <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?fm=webp&w=100&q=80" alt="StartupHub" class="property-thumb">
+                          <div class="property-cell-info">
+                            <h6>StartupHub</h6>
+                            <span>HSR Layout, Bangalore</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td data-label="Type">Hot Desk</td>
+                      <td data-label="City">Bangalore</td>
+                      <td data-label="Start Date">Apr 15, 2026</td>
+                      <td data-label="End Date">May 14, 2026</td>
+                      <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;299</td>
+                      <td data-label="Status"><span class="dash-status completed">Completed</span></td>
+                      <td data-label="Action">
+                        <button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button>
+                      </td>
+                    </tr>
+                    <tr data-status="cancelled" data-city="pune">
+                      <td data-label="Property">
+                        <div class="property-cell">
+                          <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?fm=webp&w=100&q=80" alt="Workspace360" class="property-thumb">
+                          <div class="property-cell-info">
+                            <h6>Workspace360</h6>
+                            <span>Kothrud, Pune</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td data-label="Type">Meeting Room</td>
+                      <td data-label="City">Pune</td>
+                      <td data-label="Start Date">Jul 10, 2026</td>
+                      <td data-label="End Date">Jul 10, 2026</td>
+                      <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;150</td>
+                      <td data-label="Status"><span class="dash-status cancelled">Cancelled</span></td>
+                      <td data-label="Action">
+                        <button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button>
+                      </td>
+                    </tr>
+                    <tr data-status="completed" data-city="hyderabad">
+                      <td data-label="Property">
+                        <div class="property-cell">
+                          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?fm=webp&w=100&q=80" alt="NestHub" class="property-thumb">
+                          <div class="property-cell-info">
+                            <h6>NestHub</h6>
+                            <span>Gachibowli, Hyderabad</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td data-label="Type">Suite</td>
+                      <td data-label="City">Hyderabad</td>
+                      <td data-label="Start Date">Mar 1, 2026</td>
+                      <td data-label="End Date">Mar 31, 2026</td>
+                      <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;799</td>
+                      <td data-label="Status"><span class="dash-status completed">Completed</span></td>
+                      <td data-label="Action">
+                        <button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="dash-empty" id="emptyState" style="display:none;">
+                <div class="dash-empty-icon"><i class="fa-regular fa-calendar-xmark"></i></div>
+                <h4>No Bookings Found</h4>
+                <p>No bookings match your current filters. Try adjusting your search or browse available spaces.</p>
+                <a href="#" class="btn btn-primary" style="margin-top:20px;" data-section="properties">Browse Spaces</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• END BOOKINGS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• FAVORITES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        <div class="dash-section hidden" id="sec-favorites">
+
+          <div class="dash-card" data-aos="fade-up" style="margin-bottom:28px;">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">My Favorites</h3>
+              <span style="color:var(--text-4);font-weight:400;font-size:var(--fs-sm);">4 spaces saved</span>
+            </div>
+            <div class="dash-card-body">
+              <div class="dash-grid" style="grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:24px;">
+
+                <div class="dash-card" style="margin-bottom:0;overflow:hidden;padding:0;" data-aos="fade-up">
+                  <div style="position:relative;">
+                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?fm=webp&w=600&q=80" alt="The Hive" style="width:100%;height:180px;object-fit:cover;">
+                    <button class="dash-topbar-btn" style="position:absolute;top:12px;right:12px;width:36px;height:36px;background:rgba(255,255,255,0.9);border-radius:50%;color:var(--danger);" title="Remove from Favorites"><i class="fa-solid fa-heart"></i></button>
+                    <span class="dash-status active" style="position:absolute;top:12px;left:12px;">Hot Desk</span>
+                  </div>
+                  <div style="padding:16px;">
+                    <h5 style="font-size:var(--fs-base);font-weight:600;margin-bottom:4px;">The Hive</h5>
+                    <p style="color:var(--text-4);font-size:var(--fs-sm);margin-bottom:8px;"><i class="fa-solid fa-location-dot" style="color:var(--primary);margin-right:4px;"></i> Koramangala, Bangalore</p>
+                    <div style="display:flex;align-items:center;justify-content:space-between;">
+                      <span style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);">&#8377;299/mo</span>
+                      <span style="color:var(--text-4);font-size:var(--fs-xs);">Hot Desk</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="dash-card" style="margin-bottom:0;overflow:hidden;padding:0;" data-aos="fade-up" data-aos-delay="100">
+                  <div style="position:relative;">
+                    <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?fm=webp&w=600&q=80" alt="CoWork Arena" style="width:100%;height:180px;object-fit:cover;">
+                    <button class="dash-topbar-btn" style="position:absolute;top:12px;right:12px;width:36px;height:36px;background:rgba(255,255,255,0.9);border-radius:50%;color:var(--danger);" title="Remove from Favorites"><i class="fa-solid fa-heart"></i></button>
+                    <span class="dash-status pending" style="position:absolute;top:12px;left:12px;">Dedicated Desk</span>
+                  </div>
+                  <div style="padding:16px;">
+                    <h5 style="font-size:var(--fs-base);font-weight:600;margin-bottom:4px;">CoWork Arena</h5>
+                    <p style="color:var(--text-4);font-size:var(--fs-sm);margin-bottom:8px;"><i class="fa-solid fa-location-dot" style="color:var(--primary);margin-right:4px;"></i> Bandra, Mumbai</p>
+                    <div style="display:flex;align-items:center;justify-content:space-between;">
+                      <span style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);">&#8377;599/mo</span>
+                      <span style="color:var(--text-4);font-size:var(--fs-xs);">Dedicated Desk</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="dash-card" style="margin-bottom:0;overflow:hidden;padding:0;" data-aos="fade-up" data-aos-delay="200">
+                  <div style="position:relative;">
+                    <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?fm=webp&w=600&q=80" alt="NestHub" style="width:100%;height:180px;object-fit:cover;">
+                    <button class="dash-topbar-btn" style="position:absolute;top:12px;right:12px;width:36px;height:36px;background:rgba(255,255,255,0.9);border-radius:50%;color:var(--danger);" title="Remove from Favorites"><i class="fa-solid fa-heart"></i></button>
+                    <span class="dash-status completed" style="position:absolute;top:12px;left:12px;">Suite</span>
+                  </div>
+                  <div style="padding:16px;">
+                    <h5 style="font-size:var(--fs-base);font-weight:600;margin-bottom:4px;">NestHub</h5>
+                    <p style="color:var(--text-4);font-size:var(--fs-sm);margin-bottom:8px;"><i class="fa-solid fa-location-dot" style="color:var(--primary);margin-right:4px;"></i> Gachibowli, Hyderabad</p>
+                    <div style="display:flex;align-items:center;justify-content:space-between;">
+                      <span style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);">&#8377;799/mo</span>
+                      <span style="color:var(--text-4);font-size:var(--fs-xs);">Suite</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="dash-card" style="margin-bottom:0;overflow:hidden;padding:0;" data-aos="fade-up" data-aos-delay="300">
+                  <div style="position:relative;">
+                    <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?fm=webp&w=600&q=80" alt="StartupHub" style="width:100%;height:180px;object-fit:cover;">
+                    <button class="dash-topbar-btn" style="position:absolute;top:12px;right:12px;width:36px;height:36px;background:rgba(255,255,255,0.9);border-radius:50%;color:var(--danger);" title="Remove from Favorites"><i class="fa-solid fa-heart"></i></button>
+                    <span class="dash-status active" style="position:absolute;top:12px;left:12px;">Hot Desk</span>
+                  </div>
+                  <div style="padding:16px;">
+                    <h5 style="font-size:var(--fs-base);font-weight:600;margin-bottom:4px;">StartupHub</h5>
+                    <p style="color:var(--text-4);font-size:var(--fs-sm);margin-bottom:8px;"><i class="fa-solid fa-location-dot" style="color:var(--primary);margin-right:4px;"></i> HSR Layout, Bangalore</p>
+                    <div style="display:flex;align-items:center;justify-content:space-between;">
+                      <span style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);">&#8377;349/mo</span>
+                      <span style="color:var(--text-4);font-size:var(--fs-xs);">Hot Desk</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• END FAVORITES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• BILLING â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        <div class="dash-section hidden" id="sec-billing">
+
+          <div class="dash-card" data-aos="fade-up" style="margin-bottom:28px;">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Billing & Invoices</h3>
+            </div>
+            <div class="dash-card-body">
+              <div class="dash-stats" style="margin-bottom:0;">
+                <div class="dash-stat-card" data-aos="fade-up">
+                  <div class="dash-stat-icon green"><i class="fa-solid fa-circle-check"></i></div>
+                  <div class="dash-stat-value">&#8377;10,800</div>
+                  <div class="dash-stat-label">Total Paid</div>
+                </div>
+                <div class="dash-stat-card" data-aos="fade-up" data-aos-delay="100">
+                  <div class="dash-stat-icon amber"><i class="fa-solid fa-clock"></i></div>
+                  <div class="dash-stat-value">&#8377;1,600</div>
+                  <div class="dash-stat-label">Pending Amount</div>
+                </div>
+                <div class="dash-stat-card" data-aos="fade-up" data-aos-delay="200">
+                  <div class="dash-stat-icon blue"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                  <div class="dash-stat-value">&#8377;4,200</div>
+                  <div class="dash-stat-label">Last Payment</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-card" data-aos="fade-up">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Invoice History</h3>
+            </div>
+            <div class="dash-card-body" style="padding:0;">
+              <div class="dash-table-wrap">
+                <table class="dash-table">
+                  <thead>
+                    <tr>
+                      <th>Invoice ID</th>
+                      <th>Property</th>
+                      <th>Date</th>
+                      <th>Amount</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-label="Invoice ID" style="font-weight:600;">INV-2026-008</td>
+                      <td data-label="Property">
+                        <div class="property-cell">
+                          <div class="property-cell-info">
+                            <h6>The Hive</h6>
+                            <span>Bangalore</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td data-label="Date">Aug 20, 2026</td>
+                      <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;4,200</td>
+                      <td data-label="Status"><span class="dash-status active">Paid</span></td>
+                      <td data-label="Action"><button class="dash-topbar-btn" style="width:auto;padding:6px 14px;font-size:var(--fs-xs);gap:6px;"><i class="fa-solid fa-download"></i> Download</button></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Invoice ID" style="font-weight:600;">INV-2026-007</td>
+                      <td data-label="Property">
+                        <div class="property-cell">
+                          <div class="property-cell-info">
+                            <h6>CoWork Arena</h6>
+                            <span>Mumbai</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td data-label="Date">Jul 15, 2026</td>
+                      <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;599</td>
+                      <td data-label="Status"><span class="dash-status active">Paid</span></td>
+                      <td data-label="Action"><button class="dash-topbar-btn" style="width:auto;padding:6px 14px;font-size:var(--fs-xs);gap:6px;"><i class="fa-solid fa-download"></i> Download</button></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Invoice ID" style="font-weight:600;">INV-2026-006</td>
+                      <td data-label="Property">
+                        <div class="property-cell">
+                          <div class="property-cell-info">
+                            <h6>WorkNest Delhi</h6>
+                            <span>Delhi NCR</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td data-label="Date">Jun 01, 2026</td>
+                      <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;4,500</td>
+                      <td data-label="Status"><span class="dash-status active">Paid</span></td>
+                      <td data-label="Action"><button class="dash-topbar-btn" style="width:auto;padding:6px 14px;font-size:var(--fs-xs);gap:6px;"><i class="fa-solid fa-download"></i> Download</button></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Invoice ID" style="font-weight:600;">INV-2026-009</td>
+                      <td data-label="Property">
+                        <div class="property-cell">
+                          <div class="property-cell-info">
+                            <h6>NestHub</h6>
+                            <span>Hyderabad</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td data-label="Date">Aug 18, 2026</td>
+                      <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;799</td>
+                      <td data-label="Status"><span class="dash-status pending">Pending</span></td>
+                      <td data-label="Action"><button class="dash-topbar-btn" style="width:auto;padding:6px 14px;font-size:var(--fs-xs);gap:6px;"><i class="fa-solid fa-download"></i> Download</button></td>
+                    </tr>
+                    <tr>
+                      <td data-label="Invoice ID" style="font-weight:600;">INV-2026-005</td>
+                      <td data-label="Property">
+                        <div class="property-cell">
+                          <div class="property-cell-info">
+                            <h6>Workspace360</h6>
+                            <span>Pune</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td data-label="Date">May 10, 2026</td>
+                      <td data-label="Amount" style="color:var(--primary-400);font-weight:600;">&#8377;150</td>
+                      <td data-label="Status"><span class="dash-status cancelled">Overdue</span></td>
+                      <td data-label="Action"><button class="dash-topbar-btn" style="width:auto;padding:6px 14px;font-size:var(--fs-xs);gap:6px;"><i class="fa-solid fa-download"></i> Download</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• END BILLING â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• PROPERTIES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        <div class="dash-section hidden" id="sec-properties">
+
+          <div class="dash-card" data-aos="fade-up" style="margin-bottom:28px;">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Browse Properties</h3>
+            </div>
+            <div class="dash-card-body">
+              <div class="dash-filters" style="margin-bottom:0;border:none;padding:0;background:none;">
+                <select class="dash-filter-select" id="propCityFilter">
+                  <option value="all">All Cities</option>
+                  <option value="bangalore">Bangalore</option>
+                  <option value="mumbai">Mumbai</option>
+                  <option value="delhi">Delhi NCR</option>
+                  <option value="hyderabad">Hyderabad</option>
+                  <option value="pune">Pune</option>
+                </select>
+                <select class="dash-filter-select" id="propTypeFilter">
+                  <option value="all">All Types</option>
+                  <option value="hot-desk">Hot Desk</option>
+                  <option value="dedicated-desk">Dedicated Desk</option>
+                  <option value="private-office">Private Office</option>
+                  <option value="meeting-room">Meeting Room</option>
+                  <option value="suite">Suite</option>
+                </select>
+                <div class="dash-filter-search">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="text" id="propSearch" placeholder="Search properties...">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-grid" style="grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:24px;">
+
+            <div class="dash-card" style="margin-bottom:0;overflow:hidden;padding:0;" data-aos="fade-up">
+              <div style="position:relative;">
+                <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?fm=webp&w=600&q=80" alt="The Hive" style="width:100%;height:180px;object-fit:cover;">
+                <span class="dash-status active" style="position:absolute;top:12px;left:12px;">Hot Desk</span>
+              </div>
+              <div style="padding:16px;">
+                <h5 style="font-size:var(--fs-base);font-weight:600;margin-bottom:4px;">The Hive</h5>
+                <p style="color:var(--text-4);font-size:var(--fs-sm);margin-bottom:8px;"><i class="fa-solid fa-location-dot" style="color:var(--primary);margin-right:4px;"></i> Koramangala, Bangalore</p>
+                <p style="color:var(--text-4);font-size:var(--fs-xs);margin-bottom:12px;">Hot Desk &bull; High-speed WiFi &bull; Free Coffee</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                  <span style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);">&#8377;299/mo</span>
+                </div>
+                <div style="display:flex;gap:8px;">
+                  <a href="#" class="btn btn-primary" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;">View Details</a>
+                  <a href="#" class="btn btn-outline" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;" data-section="tours">Book Tour</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-card" style="margin-bottom:0;overflow:hidden;padding:0;" data-aos="fade-up" data-aos-delay="100">
+              <div style="position:relative;">
+                <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?fm=webp&w=600&q=80" alt="CoWork Arena" style="width:100%;height:180px;object-fit:cover;">
+                <span class="dash-status pending" style="position:absolute;top:12px;left:12px;">Dedicated Desk</span>
+              </div>
+              <div style="padding:16px;">
+                <h5 style="font-size:var(--fs-base);font-weight:600;margin-bottom:4px;">CoWork Arena</h5>
+                <p style="color:var(--text-4);font-size:var(--fs-sm);margin-bottom:8px;"><i class="fa-solid fa-location-dot" style="color:var(--primary);margin-right:4px;"></i> Bandra, Mumbai</p>
+                <p style="color:var(--text-4);font-size:var(--fs-xs);margin-bottom:12px;">Dedicated Desk &bull; AC &bull; Meeting Room Access</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                  <span style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);">&#8377;599/mo</span>
+                </div>
+                <div style="display:flex;gap:8px;">
+                  <a href="#" class="btn btn-primary" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;">View Details</a>
+                  <a href="#" class="btn btn-outline" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;" data-section="tours">Book Tour</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-card" style="margin-bottom:0;overflow:hidden;padding:0;" data-aos="fade-up" data-aos-delay="200">
+              <div style="position:relative;">
+                <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?fm=webp&w=600&q=80" alt="WorkNest Delhi" style="width:100%;height:180px;object-fit:cover;">
+                <span class="dash-status completed" style="position:absolute;top:12px;left:12px;">Private Office</span>
+              </div>
+              <div style="padding:16px;">
+                <h5 style="font-size:var(--fs-base);font-weight:600;margin-bottom:4px;">WorkNest Delhi</h5>
+                <p style="color:var(--text-4);font-size:var(--fs-sm);margin-bottom:8px;"><i class="fa-solid fa-location-dot" style="color:var(--primary);margin-right:4px;"></i> Connaught Place, Delhi</p>
+                <p style="color:var(--text-4);font-size:var(--fs-xs);margin-bottom:12px;">Private Office &bull; 24/7 Access &bull; Reception</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                  <span style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);">&#8377;999/mo</span>
+                </div>
+                <div style="display:flex;gap:8px;">
+                  <a href="#" class="btn btn-primary" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;">View Details</a>
+                  <a href="#" class="btn btn-outline" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;" data-section="tours">Book Tour</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-card" style="margin-bottom:0;overflow:hidden;padding:0;" data-aos="fade-up" data-aos-delay="300">
+              <div style="position:relative;">
+                <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?fm=webp&w=600&q=80" alt="StartupHub" style="width:100%;height:180px;object-fit:cover;">
+                <span class="dash-status active" style="position:absolute;top:12px;left:12px;">Hot Desk</span>
+              </div>
+              <div style="padding:16px;">
+                <h5 style="font-size:var(--fs-base);font-weight:600;margin-bottom:4px;">StartupHub</h5>
+                <p style="color:var(--text-4);font-size:var(--fs-sm);margin-bottom:8px;"><i class="fa-solid fa-location-dot" style="color:var(--primary);margin-right:4px;"></i> HSR Layout, Bangalore</p>
+                <p style="color:var(--text-4);font-size:var(--fs-xs);margin-bottom:12px;">Hot Desk &bull; Ergonomic Chairs &bull; Parking</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                  <span style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);">&#8377;349/mo</span>
+                </div>
+                <div style="display:flex;gap:8px;">
+                  <a href="#" class="btn btn-primary" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;">View Details</a>
+                  <a href="#" class="btn btn-outline" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;" data-section="tours">Book Tour</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-card" style="margin-bottom:0;overflow:hidden;padding:0;" data-aos="fade-up" data-aos-delay="400">
+              <div style="position:relative;">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?fm=webp&w=600&q=80" alt="NestHub" style="width:100%;height:180px;object-fit:cover;">
+                <span class="dash-status completed" style="position:absolute;top:12px;left:12px;">Suite</span>
+              </div>
+              <div style="padding:16px;">
+                <h5 style="font-size:var(--fs-base);font-weight:600;margin-bottom:4px;">NestHub</h5>
+                <p style="color:var(--text-4);font-size:var(--fs-sm);margin-bottom:8px;"><i class="fa-solid fa-location-dot" style="color:var(--primary);margin-right:4px;"></i> Gachibowli, Hyderabad</p>
+                <p style="color:var(--text-4);font-size:var(--fs-xs);margin-bottom:12px;">Suite &bull; Private Cabin &bull; Pantry Access</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                  <span style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);">&#8377;799/mo</span>
+                </div>
+                <div style="display:flex;gap:8px;">
+                  <a href="#" class="btn btn-primary" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;">View Details</a>
+                  <a href="#" class="btn btn-outline" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;" data-section="tours">Book Tour</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-card" style="margin-bottom:0;overflow:hidden;padding:0;" data-aos="fade-up" data-aos-delay="500">
+              <div style="position:relative;">
+                <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?fm=webp&w=600&q=80" alt="Workspace360" style="width:100%;height:180px;object-fit:cover;">
+                <span class="dash-status pending" style="position:absolute;top:12px;left:12px;">Meeting Room</span>
+              </div>
+              <div style="padding:16px;">
+                <h5 style="font-size:var(--fs-base);font-weight:600;margin-bottom:4px;">Workspace360</h5>
+                <p style="color:var(--text-4);font-size:var(--fs-sm);margin-bottom:8px;"><i class="fa-solid fa-location-dot" style="color:var(--primary);margin-right:4px;"></i> Kothrud, Pune</p>
+                <p style="color:var(--text-4);font-size:var(--fs-xs);margin-bottom:12px;">Meeting Room &bull; Projector &bull; Whiteboard</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                  <span style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);">&#8377;199/hr</span>
+                </div>
+                <div style="display:flex;gap:8px;">
+                  <a href="#" class="btn btn-primary" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;">View Details</a>
+                  <a href="#" class="btn btn-outline" style="flex:1;text-align:center;font-size:var(--fs-xs);padding:8px 12px;" data-section="tours">Book Tour</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• END PROPERTIES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• SPACES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        <div class="dash-section hidden" id="sec-spaces">
+
+          <div class="dash-card" data-aos="fade-up" style="margin-bottom:28px;">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Space Types</h3>
+              <span style="color:var(--text-4);font-weight:400;font-size:var(--fs-sm);">Choose what fits your work style</span>
+            </div>
+          </div>
+
+          <div class="dash-grid" style="grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:24px;">
+
+            <div class="dash-card" data-aos="fade-up" style="text-align:center;">
+              <div class="dash-card-body" style="padding:32px 24px;">
+                <div style="width:64px;height:64px;border-radius:16px;background:rgba(16,185,129,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.5rem;color:var(--primary);"><i class="fa-solid fa-laptop"></i></div>
+                <h4 style="font-size:var(--fs-base);font-weight:700;margin-bottom:4px;">Hot Desk</h4>
+                <p style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);margin-bottom:12px;">&#8377;299/mo</p>
+                <p style="color:var(--text-4);font-size:var(--fs-sm);margin-bottom:16px;">Flexible seating in shared workspace. Grab any available desk each day.</p>
+                <ul style="list-style:none;padding:0;margin-bottom:20px;text-align:left;">
+                  <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> High-speed WiFi</li>
+                  <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Free coffee & tea</li>
+                  <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Community events</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width:100%;text-align:center;">Book Now</a>
+              </div>
+            </div>
+
+            <div class="dash-card" data-aos="fade-up" data-aos-delay="100" style="text-align:center;">
+              <div class="dash-card-body" style="padding:32px 24px;">
+                <div style="width:64px;height:64px;border-radius:16px;background:rgba(59,130,246,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.5rem;color:#3b82f6;"><i class="fa-solid fa-desktop"></i></div>
+                <h4 style="font-size:var(--fs-base);font-weight:700;margin-bottom:4px;">Dedicated Desk</h4>
+                <p style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);margin-bottom:12px;">&#8377;599/mo</p>
+                <p style="color:var(--text-4);font-size:var(--fs-sm);margin-bottom:16px;">Your own permanent desk in a shared space with lockable storage.</p>
+                <ul style="list-style:none;padding:0;margin-bottom:20px;text-align:left;">
+                  <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Personal desk setup</li>
+                  <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Lockable storage</li>
+                  <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Meeting room access</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width:100%;text-align:center;">Book Now</a>
+              </div>
+            </div>
+
+            <div class="dash-card" data-aos="fade-up" data-aos-delay="200" style="text-align:center;">
+              <div class="dash-card-body" style="padding:32px 24px;">
+                <div style="width:64px;height:64px;border-radius:16px;background:rgba(168,85,247,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.5rem;color:#a855f7;"><i class="fa-solid fa-door-closed"></i></div>
+                <h4 style="font-size:var(--fs-base);font-weight:700;margin-bottom:4px;">Private Office</h4>
+                <p style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);margin-bottom:12px;">&#8377;999/mo</p>
+                <p style="color:var(--text-4);font-size:var(--fs-sm);margin-bottom:16px;">Fully enclosed private office for teams of 1-10 people.</p>
+                <ul style="list-style:none;padding:0;margin-bottom:20px;text-align:left;">
+                  <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> 24/7 access</li>
+                  <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Reception & mail handling</li>
+                  <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Custom branding</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width:100%;text-align:center;">Book Now</a>
+              </div>
+            </div>
+
+            <div class="dash-card" data-aos="fade-up" data-aos-delay="300" style="text-align:center;">
+              <div class="dash-card-body" style="padding:32px 24px;">
+                <div style="width:64px;height:64px;border-radius:16px;background:rgba(245,158,11,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.5rem;color:#f59e0b;"><i class="fa-solid fa-people-group"></i></div>
+                <h4 style="font-size:var(--fs-base);font-weight:700;margin-bottom:4px;">Meeting Room</h4>
+                <p style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);margin-bottom:12px;">&#8377;199/hr</p>
+                <p style="color:var(--text-4);font-size:var(--fs-sm);margin-bottom:16px;">Professional meeting space for up to 12 people with AV equipment.</p>
+                <ul style="list-style:none;padding:0;margin-bottom:20px;text-align:left;">
+                  <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Projector & screen</li>
+                  <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Video conferencing</li>
+                  <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Whiteboard & markers</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width:100%;text-align:center;">Book Now</a>
+              </div>
+            </div>
+
+            <div class="dash-card" data-aos="fade-up" data-aos-delay="400" style="text-align:center;">
+              <div class="dash-card-body" style="padding:32px 24px;">
+                <div style="width:64px;height:64px;border-radius:16px;background:rgba(239,68,68,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.5rem;color:#ef4444;"><i class="fa-solid fa-building"></i></div>
+                <h4 style="font-size:var(--fs-base);font-weight:700;margin-bottom:4px;">Conference Hall</h4>
+                <p style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);margin-bottom:12px;">&#8377;499/hr</p>
+                <p style="color:var(--text-4);font-size:var(--fs-sm);margin-bottom:16px;">Large venue for corporate events, workshops, and town halls.</p>
+                <ul style="list-style:none;padding:0;margin-bottom:20px;text-align:left;">
+                  <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Seats up to 50 people</li>
+                  <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> PA system & mic</li>
+                  <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Catering available</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width:100%;text-align:center;">Book Now</a>
+              </div>
+            </div>
+
+            <div class="dash-card" data-aos="fade-up" data-aos-delay="500" style="text-align:center;">
+              <div class="dash-card-body" style="padding:32px 24px;">
+                <div style="width:64px;height:64px;border-radius:16px;background:rgba(20,184,166,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.5rem;color:#14b8a6;"><i class="fa-solid fa-globe"></i></div>
+                <h4 style="font-size:var(--fs-base);font-weight:700;margin-bottom:4px;">Virtual Office</h4>
+                <p style="color:var(--primary-400);font-weight:700;font-size:var(--fs-lg);margin-bottom:12px;">&#8377;149/mo</p>
+                <p style="color:var(--text-4);font-size:var(--fs-sm);margin-bottom:16px;">Professional business address with mail handling and call forwarding.</p>
+                <ul style="list-style:none;padding:0;margin-bottom:20px;text-align:left;">
+                  <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Business address</li>
+                  <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Mail forwarding</li>
+                  <li style="padding:6px 0;font-size:var(--fs-sm);color:var(--text-3);"><i class="fa-solid fa-check" style="color:var(--primary);margin-right:8px;"></i> Call handling</li>
+                </ul>
+                <a href="#" class="btn btn-primary" style="width:100%;text-align:center;">Book Now</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• END SPACES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• TOURS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        <div class="dash-section hidden" id="sec-tours">
+
+          <div class="dash-grid" style="grid-template-columns:1fr 1fr; gap:28px; align-items:start;">
+
+            <div class="dash-card" data-aos="fade-up">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title">Book a Tour</h3>
+              </div>
+              <div class="dash-card-body">
+                <form id="tourForm" style="display:flex;flex-direction:column;gap:16px;">
+                  <div>
+                    <label style="display:block;font-size:var(--fs-sm);font-weight:500;margin-bottom:6px;color:var(--text-2);">Full Name</label>
+                    <input type="text" style="width:100%;border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm);" value="Vivek Kumar" placeholder="Your full name">
+                  </div>
+                  <div>
+                    <label style="display:block;font-size:var(--fs-sm);font-weight:500;margin-bottom:6px;color:var(--text-2);">Email Address</label>
+                    <input type="email" style="width:100%;border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm);" value="vivek@example.com" placeholder="you@example.com">
+                  </div>
+                  <div>
+                    <label style="display:block;font-size:var(--fs-sm);font-weight:500;margin-bottom:6px;color:var(--text-2);">Phone Number</label>
+                    <input type="tel" style="width:100%;border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm);" placeholder="+91 98765 43210">
+                  </div>
+                  <div>
+                    <label style="display:block;font-size:var(--fs-sm);font-weight:500;margin-bottom:6px;color:var(--text-2);">Preferred Property</label>
+                    <select class="dash-filter-select" style="width:100%;">
+                      <option value="">Select a property</option>
+                      <option value="the-hive">The Hive - Bangalore</option>
+                      <option value="cowork-arena">CoWork Arena - Mumbai</option>
+                      <option value="worknest-delhi">WorkNest Delhi - Delhi NCR</option>
+                      <option value="startuphub">StartupHub - Bangalore</option>
+                      <option value="nesthub">NestHub - Hyderabad</option>
+                      <option value="workspace360">Workspace360 - Pune</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label style="display:block;font-size:var(--fs-sm);font-weight:500;margin-bottom:6px;color:var(--text-2);">Preferred Date</label>
+                    <input type="date" style="width:100%;border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm);">
+                  </div>
+                  <div>
+                    <label style="display:block;font-size:var(--fs-sm);font-weight:500;margin-bottom:6px;color:var(--text-2);">Preferred Time</label>
+                    <select class="dash-filter-select" style="width:100%;">
+                      <option value="">Select a time slot</option>
+                      <option value="9am">9:00 AM - 10:00 AM</option>
+                      <option value="10am">10:00 AM - 11:00 AM</option>
+                      <option value="11am">11:00 AM - 12:00 PM</option>
+                      <option value="12pm">12:00 PM - 1:00 PM</option>
+                      <option value="2pm">2:00 PM - 3:00 PM</option>
+                      <option value="3pm">3:00 PM - 4:00 PM</option>
+                      <option value="4pm">4:00 PM - 5:00 PM</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary" style="width:100%;text-align:center;padding:12px;font-size:var(--fs-sm);">Submit Tour Request</button>
+                </form>
+              </div>
+            </div>
+
+            <div class="dash-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="dash-card-header">
+                <h3 class="dash-card-title">Upcoming Tours</h3>
+              </div>
+              <div class="dash-card-body">
+                <div class="dash-booking-mini" style="border:1px solid var(--border);border-radius:var(--r-md);padding:16px;">
+                  <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?fm=webp&w=200&q=80" alt="CoWork Arena" class="dash-booking-mini-img">
+                  <div class="dash-booking-mini-info">
+                    <div class="dash-booking-mini-title">CoWork Arena</div>
+                    <div class="dash-booking-mini-meta">
+                      <span><i class="fa-solid fa-location-dot"></i> Bandra, Mumbai</span>
+                      <span><i class="fa-regular fa-calendar"></i> Aug 23, 2026</span>
+                      <span><i class="fa-regular fa-clock"></i> 11:00 AM</span>
+                    </div>
+                  </div>
+                  <span class="dash-status active">Confirmed</span>
+                </div>
+                <div style="text-align:center;padding:32px 0;color:var(--text-4);font-size:var(--fs-sm);">
+                  <i class="fa-regular fa-calendar-check" style="font-size:2rem;display:block;margin-bottom:12px;color:var(--text-3);"></i>
+                  No other tours scheduled. Book a tour to explore more spaces!
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• END TOURS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• SETTINGS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        <div class="dash-section hidden" id="sec-settings">
+
+          <div class="dash-card" data-aos="fade-up" style="margin-bottom:28px;">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Account Settings</h3>
+            </div>
+            <div class="dash-card-body">
+              <h4 style="font-size:var(--fs-base);font-weight:600;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);">Profile Information</h4>
+              <div class="form-grid-2">
+                <div>
+                  <label style="display:block;font-size:var(--fs-sm);font-weight:500;margin-bottom:6px;color:var(--text-2);">Full Name</label>
+                  <input type="text" style="width:100%;border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm);" value="Vivek Kumar">
+                </div>
+                <div>
+                  <label style="display:block;font-size:var(--fs-sm);font-weight:500;margin-bottom:6px;color:var(--text-2);">Email Address</label>
+                  <input type="email" style="width:100%;border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm);" value="vivek@example.com">
+                </div>
+                <div>
+                  <label style="display:block;font-size:var(--fs-sm);font-weight:500;margin-bottom:6px;color:var(--text-2);">Phone Number</label>
+                  <input type="tel" style="width:100%;border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm);" value="+91 98765 43210">
+                </div>
+                <div>
+                  <label style="display:block;font-size:var(--fs-sm);font-weight:500;margin-bottom:6px;color:var(--text-2);">Company</label>
+                  <input type="text" style="width:100%;border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm);" value="TechNova Solutions">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-card" data-aos="fade-up" data-aos-delay="100" style="margin-bottom:28px;">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Notification Preferences</h3>
+            </div>
+            <div class="dash-card-body">
+              <div style="display:flex;flex-direction:column;gap:16px;">
+                <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);">
+                  <div>
+                    <div style="font-weight:500;font-size:var(--fs-sm);">Email Notifications</div>
+                    <div style="color:var(--text-4);font-size:var(--fs-xs);">Receive booking updates, invoices, and news via email</div>
+                  </div>
+                  <label style="position:relative;display:inline-block;width:48px;height:26px;cursor:pointer;">
+                    <input type="checkbox" checked style="opacity:0;width:0;height:0;">
+                    <span style="position:absolute;top:0;left:0;right:0;bottom:0;background:var(--primary);border-radius:13px;transition:0.3s;"><span style="position:absolute;content:'';height:20px;width:20px;left:24px;bottom:3px;background:white;border-radius:50%;transition:0.3s;"></span></span>
+                  </label>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);">
+                  <div>
+                    <div style="font-weight:500;font-size:var(--fs-sm);">SMS Notifications</div>
+                    <div style="color:var(--text-4);font-size:var(--fs-xs);">Get text alerts for booking confirmations and reminders</div>
+                  </div>
+                  <label style="position:relative;display:inline-block;width:48px;height:26px;cursor:pointer;">
+                    <input type="checkbox" style="opacity:0;width:0;height:0;">
+                    <span style="position:absolute;top:0;left:0;right:0;bottom:0;background:var(--text-4);border-radius:13px;transition:0.3s;"><span style="position:absolute;content:'';height:20px;width:20px;left:3px;bottom:3px;background:white;border-radius:50%;transition:0.3s;"></span></span>
+                  </label>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);">
+                  <div>
+                    <div style="font-weight:500;font-size:var(--fs-sm);">Push Notifications</div>
+                    <div style="color:var(--text-4);font-size:var(--fs-xs);">Browser push notifications for real-time updates</div>
+                  </div>
+                  <label style="position:relative;display:inline-block;width:48px;height:26px;cursor:pointer;">
+                    <input type="checkbox" checked style="opacity:0;width:0;height:0;">
+                    <span style="position:absolute;top:0;left:0;right:0;bottom:0;background:var(--primary);border-radius:13px;transition:0.3s;"><span style="position:absolute;content:'';height:20px;width:20px;left:24px;bottom:3px;background:white;border-radius:50%;transition:0.3s;"></span></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-card" data-aos="fade-up" data-aos-delay="200" style="margin-bottom:28px;">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Appearance</h3>
+            </div>
+            <div class="dash-card-body">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;">
+                <div>
+                  <div style="font-weight:500;font-size:var(--fs-sm);">Dark Mode</div>
+                  <div style="color:var(--text-4);font-size:var(--fs-xs);">Switch between light and dark theme</div>
+                </div>
+                <label style="position:relative;display:inline-block;width:48px;height:26px;cursor:pointer;">
+                  <input type="checkbox" style="opacity:0;width:0;height:0;">
+                  <span style="position:absolute;top:0;left:0;right:0;bottom:0;background:var(--text-4);border-radius:13px;transition:0.3s;"><span style="position:absolute;content:'';height:20px;width:20px;left:3px;bottom:3px;background:white;border-radius:50%;transition:0.3s;"></span></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div data-aos="fade-up">
+            <button class="btn btn-primary" style="padding:12px 32px;font-size:var(--fs-sm);">Save Changes</button>
+          </div>
+
+        </div>
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• END SETTINGS â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• SUPPORT â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+        <div class="dash-section hidden" id="sec-support">
+
+          <div class="dash-card" data-aos="fade-up" style="margin-bottom:28px;">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Help & Support</h3>
+            </div>
+            <div class="dash-card-body">
+              <div class="dash-filter-search" style="max-width:500px;">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search for help topics...">
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-grid" style="grid-template-columns:repeat(3, 1fr); gap:24px; margin-bottom:28px;">
+            <div class="dash-card" data-aos="fade-up" style="text-align:center;">
+              <div class="dash-card-body" style="padding:28px 20px;">
+                <div style="width:56px;height:56px;border-radius:14px;background:rgba(59,130,246,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:1.3rem;color:#3b82f6;"><i class="fa-solid fa-circle-question"></i></div>
+                <h5 style="font-size:var(--fs-sm);font-weight:600;margin-bottom:4px;">FAQ</h5>
+                <p style="color:var(--text-4);font-size:var(--fs-xs);">Browse frequently asked questions</p>
+              </div>
+            </div>
+            <div class="dash-card" data-aos="fade-up" data-aos-delay="100" style="text-align:center;">
+              <div class="dash-card-body" style="padding:28px 20px;">
+                <div style="width:56px;height:56px;border-radius:14px;background:rgba(16,185,129,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:1.3rem;color:var(--primary);"><i class="fa-solid fa-headset"></i></div>
+                <h5 style="font-size:var(--fs-sm);font-weight:600;margin-bottom:4px;">Contact Us</h5>
+                <p style="color:var(--text-4);font-size:var(--fs-xs);">Reach our support team directly</p>
+              </div>
+            </div>
+            <div class="dash-card" data-aos="fade-up" data-aos-delay="200" style="text-align:center;">
+              <div class="dash-card-body" style="padding:28px 20px;">
+                <div style="width:56px;height:56px;border-radius:14px;background:rgba(239,68,68,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:1.3rem;color:#ef4444;"><i class="fa-solid fa-flag"></i></div>
+                <h5 style="font-size:var(--fs-sm);font-weight:600;margin-bottom:4px;">Report Issue</h5>
+                <p style="color:var(--text-4);font-size:var(--fs-xs);">Report a problem or bug</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-card" data-aos="fade-up" style="margin-bottom:28px;">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Frequently Asked Questions</h3>
+            </div>
+            <div class="dash-card-body">
+              <div style="display:flex;flex-direction:column;gap:12px;">
+                <details style="border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;">
+                  <summary style="padding:14px 16px;font-size:var(--fs-sm);font-weight:500;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;">How do I book a workspace? <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;color:var(--text-4);"></i></summary>
+                  <div style="padding:0 16px 14px;font-size:var(--fs-sm);color:var(--text-3);line-height:1.6;">To book a workspace, navigate to the Properties section, browse available spaces, and click "Book Now" on your preferred option. Select your desired dates, complete the payment, and you'll receive a confirmation email with all the details.</div>
+                </details>
+                <details style="border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;">
+                  <summary style="padding:14px 16px;font-size:var(--fs-sm);font-weight:500;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;">Can I cancel or modify my booking? <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;color:var(--text-4);"></i></summary>
+                  <div style="padding:0 16px 14px;font-size:var(--fs-sm);color:var(--text-3);line-height:1.6;">Yes, you can cancel or modify your booking up to 48 hours before the start date for a full refund. Within 48 hours, a 50% cancellation fee applies. To modify, go to My Bookings and click the edit icon next to the booking you want to change.</div>
+                </details>
+                <details style="border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;">
+                  <summary style="padding:14px 16px;font-size:var(--fs-sm);font-weight:500;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;">What payment methods are accepted? <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;color:var(--text-4);"></i></summary>
+                  <div style="padding:0 16px 14px;font-size:var(--fs-sm);color:var(--text-3);line-height:1.6;">We accept UPI (Google Pay, PhonePe, Paytm), debit cards, credit cards, net banking, and corporate invoicing. All transactions are secured with 256-bit SSL encryption for your safety.</div>
+                </details>
+                <details style="border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;">
+                  <summary style="padding:14px 16px;font-size:var(--fs-sm);font-weight:500;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;">How do I schedule a tour? <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;color:var(--text-4);"></i></summary>
+                  <div style="padding:0 16px 14px;font-size:var(--fs-sm);color:var(--text-3);line-height:1.6;">You can schedule a free tour from the "Book a Tour" section in your dashboard. Select the property you're interested in, pick a convenient date and time, and our team will confirm your visit within 2 hours. Tours are completely free and non-obligatory.</div>
+                </details>
+                <details style="border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden;">
+                  <summary style="padding:14px 16px;font-size:var(--fs-sm);font-weight:500;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;">Is there a free trial available? <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;color:var(--text-4);"></i></summary>
+                  <div style="padding:0 16px 14px;font-size:var(--fs-sm);color:var(--text-3);line-height:1.6;">Yes! We offer a 1-day free trial for new users. You can access any hot desk space in any city for one full day. Sign up, complete your profile, and claim your free trial from the dashboard. No credit card required.</div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-card" data-aos="fade-up">
+            <div class="dash-card-header">
+              <h3 class="dash-card-title">Contact Support</h3>
+            </div>
+            <div class="dash-card-body">
+              <form style="display:flex;flex-direction:column;gap:16px;">
+                <div>
+                  <label style="display:block;font-size:var(--fs-sm);font-weight:500;margin-bottom:6px;color:var(--text-2);">Subject</label>
+                  <input type="text" style="width:100%;border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm);" placeholder="Brief description of your issue">
+                </div>
+                <div>
+                  <label style="display:block;font-size:var(--fs-sm);font-weight:500;margin-bottom:6px;color:var(--text-2);">Message</label>
+                  <textarea style="width:100%;border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm);min-height:120px;resize:vertical;font-family:inherit;" placeholder="Describe your issue in detail..."></textarea>
+                </div>
+                <div>
+                  <button type="submit" class="btn btn-primary" style="padding:12px 32px;font-size:var(--fs-sm);">Submit Request</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+        <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• END SUPPORT â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• SIDEBAR TOGGLE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    var sidebar = document.getElementById('dashSidebar');
+    var overlay = document.getElementById('sidebarOverlay');
+    var toggle = document.getElementById('sidebarToggle');
+
+    if (toggle) {
+      toggle.addEventListener('click', function() {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('show');
+      });
+    }
+
+    if (overlay) {
+      overlay.addEventListener('click', function() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+      });
+    }
+
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• SECTION SWITCHING â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    var sectionLinks = document.querySelectorAll('[data-section]');
+    var allSections = document.querySelectorAll('.dash-section');
+    var pageTitle = document.getElementById('pageTitle');
+
+    var sectionTitles = {
+      overview: 'Overview',
+      bookings: 'My Bookings',
+      favorites: 'Favorites',
+      billing: 'Billing & Invoices',
+      properties: 'Browse Properties',
+      spaces: 'Space Types',
+      tours: 'Book a Tour',
+      settings: 'Account Settings',
+      support: 'Help & Support'
+    };
+
+    function switchSection(sectionId) {
+      allSections.forEach(function(sec) {
+        sec.classList.add('hidden');
+      });
+
+      var target = document.getElementById('sec-' + sectionId);
+      if (target) {
+        target.classList.remove('hidden');
+      }
+
+      if (pageTitle && sectionTitles[sectionId]) {
+        pageTitle.textContent = sectionTitles[sectionId];
+      }
+
+      document.querySelectorAll('.dash-nav-link').forEach(function(link) {
+        link.classList.remove('active');
+        if (link.getAttribute('data-section') === sectionId) {
+          link.classList.add('active');
+        }
+      });
+
+      sidebar.classList.remove('open');
+      overlay.classList.remove('show');
+
+      window.scrollTo(0, 0);
+
+      if (typeof AOS !== 'undefined') {
+        setTimeout(function() { AOS.refresh(); }, 100);
+      }
+    }
+
+    sectionLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var section = this.getAttribute('data-section');
+        if (section) {
+          e.preventDefault();
+          switchSection(section);
+        }
+      });
+    });
+
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• BOOKINGS FILTER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    var filterBtns = document.querySelectorAll('.dash-filter-btn');
+    var cityFilter = document.getElementById('cityFilter');
+    var searchInput = document.getElementById('bookingSearch');
+    var rows = document.querySelectorAll('#bookingsTable tbody tr');
+    var emptyState = document.getElementById('emptyState');
+
+    function applyFilters() {
+      var activeBtn = document.querySelector('.dash-filter-btn.active');
+      var statusFilter = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+      var cityVal = cityFilter ? cityFilter.value : 'all';
+      var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+      var visibleCount = 0;
+
+      rows.forEach(function(row) {
+        var status = row.getAttribute('data-status');
+        var city = row.getAttribute('data-city');
+        var text = row.textContent.toLowerCase();
+
+        var matchStatus = statusFilter === 'all' || status === statusFilter;
+        var matchCity = cityVal === 'all' || city === cityVal;
+        var matchSearch = !query || text.includes(query);
+
+        if (matchStatus && matchCity && matchSearch) {
+          row.style.display = '';
+          visibleCount++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      if (emptyState) {
+        emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+    }
+
+    filterBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        filterBtns.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        applyFilters();
+      });
+    });
+
+    if (cityFilter) {
+      cityFilter.addEventListener('change', applyFilters);
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', applyFilters);
+    }
+
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• TOUR FORM â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    var tourForm = document.getElementById('tourForm');
+    if (tourForm) {
+      tourForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Tour request submitted successfully! We will confirm your visit shortly.');
+        this.reset();
+      });
+    }
+
+    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• AOS INIT â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    AOS.init({ once: true, duration: 700, offset: 40 });
+  </script>
+
+</body>
+</html>

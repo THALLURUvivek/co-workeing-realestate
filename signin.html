@@ -21,7 +21,7 @@
   <!-- Loader -->
   <div class="loader hidden" id="loader">
     <div class="loader-spinner"></div>
-    <div class="loader-brand">Work<span>Nest</span></div>
+    <div class="loader-brand"><img src="images/image.png" alt="WorkNest" class="loader-brand-logo"></div>
   </div>
 
   <!-- Custom Cursor -->
@@ -76,10 +76,7 @@
 
         <div class="auth-logo-wrap">
           <div class="auth-logo">
-            <div class="auth-logo-icon"><i class="fa-solid fa-building"></i></div>
-            <div class="auth-logo-text">
-              <span class="brand-first">Work</span><span class="brand-second">Nest</span>
-            </div>
+            <img src="images/image.png" alt="WorkNest" class="auth-brand-logo">
           </div>
         </div>
 
@@ -100,6 +97,24 @@
         </div>
 
         <div class="auth-divider"><span>or continue with email</span></div>
+
+        <label class="auth-role-label">Signing in as</label>
+        <div class="auth-role-group">
+          <label class="auth-role-card selected" onclick="selectRole(this)">
+            <input type="radio" name="role" value="member" checked>
+            <div class="auth-role-check"><i class="fa-solid fa-check"></i></div>
+            <div class="auth-role-icon"><i class="fa-solid fa-laptop"></i></div>
+            <div class="auth-role-title">Member</div>
+            <div class="auth-role-desc">I use workspaces</div>
+          </label>
+          <label class="auth-role-card" onclick="selectRole(this)">
+            <input type="radio" name="role" value="owner">
+            <div class="auth-role-check"><i class="fa-solid fa-check"></i></div>
+            <div class="auth-role-icon"><i class="fa-solid fa-building"></i></div>
+            <div class="auth-role-title">Owner</div>
+            <div class="auth-role-desc">I list my spaces</div>
+          </label>
+        </div>
 
         <form id="signinForm" onsubmit="return handleSignIn(event)">
           <div class="auth-field">
@@ -177,77 +192,44 @@
       }
     }
 
+    function selectRole(card) {
+      document.querySelectorAll('.auth-role-card').forEach(function(c) { c.classList.remove('selected'); });
+      card.classList.add('selected');
+      card.querySelector('input[type="radio"]').checked = true;
+    }
+
     function handleSignIn(e) {
       e.preventDefault();
       var btn = document.getElementById('signinBtn');
+      var role = document.querySelector('input[name="role"]:checked').value;
       btn.disabled = true;
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><span>Signing In...</span>';
       setTimeout(function () {
         btn.innerHTML = '<i class="fa-solid fa-check"></i><span>Welcome Back!</span>';
         btn.style.background = 'linear-gradient(135deg, #059669, #047857)';
         showToast('Signed in successfully!', 'success');
-        setTimeout(function () { window.location.href = 'index.html'; }, 1200);
+        setTimeout(function () {
+          if (role === 'owner') {
+            window.location.href = 'dashboard.html';
+          } else {
+            window.location.href = 'dashboard.html';
+          }
+        }, 1200);
       }, 1500);
       return false;
     }
   </script>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="d-flex align-items-center gap-2 mb-3">
-            <div class="nav-brand-icon" style="width:30px; height:30px; font-size:14px;">
-              <i class="fa-solid fa-building"></i>
-            </div>
-            <span class="nav-brand" style="font-size:1.1rem;">Work<span>Nest</span></span>
-          </div>
-          <p class="footer-brand p-0" style="color:var(--text-4); font-size:var(--fs-sm); line-height:1.7; max-width:280px;">Premium co-working spaces designed for modern professionals. Elevate your work experience with WorkNest.</p>
-          <div class="footer-socials mt-3">
-            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-        <div class="footer-links">
-          <h6>Quick Links</h6>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="properties.html">Properties</a></li>
-            <li><a href="space-types.html">Space Types</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h6>Contact</h6>
-          <ul>
-            <li><i class="bi bi-envelope-fill" style="color:var(--primary);"></i> hello@worknest.com</li>
-            <li><i class="bi bi-telephone-fill" style="color:var(--primary);"></i> +91 98765 43210</li>
-            <li><i class="bi bi-geo-alt-fill" style="color:var(--primary);"></i> 42 Business Park, Koramangala, Bangalore 560034</li>
-          </ul>
-        </div>
-        <div class="footer-cities">
-          <h6>Our Cities</h6>
-          <ul>
-            <li><a href="#">Mumbai</a></li>
-            <li><a href="#">Delhi</a></li>
-            <li><a href="#">Bangalore</a></li>
-            <li><a href="#">Hyderabad</a></li>
-            <li><a href="#">Pune</a></li>
-            <li><a href="#">Chennai</a></li>
-          </ul>
-        </div>
+  <footer class="auth-footer">
+    <div class="auth-footer-inner">
+      <div class="auth-footer-brand"><img src="images/image.png" alt="WorkNest" class="brand-logo"></div>
+      <div class="auth-footer-links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 WorkNest. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
-        </div>
-      </div>
+      <p>&copy; 2026 WorkNest. All rights reserved.</p>
     </div>
   </footer>
 

@@ -188,6 +188,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/auth.js"></script>
   <script>
     AOS.init({ once: true, duration: 700 });
 
@@ -246,21 +247,30 @@
       var pw = document.getElementById('signupPassword').value;
       var cpw = document.getElementById('signupConfirm').value;
       var name = document.getElementById('signupName').value.trim();
+      var email = document.getElementById('signupEmail').value.trim();
+      var role = document.querySelector('input[name="role"]:checked').value;
 
       if (!name) { showToast('Please enter your full name.'); return false; }
       if (pw !== cpw) { showToast('Passwords do not match.'); return false; }
       if (pw.length < 8) { showToast('Password must be at least 8 characters.'); return false; }
+
+      if (WorkNestStore.findUser(email)) {
+        showToast('An account with this email already exists. Please sign in.');
+        setTimeout(function () { window.location.href = 'signin.html'; }, 1800);
+        return false;
+      }
 
       var btn = document.getElementById('signupBtn');
       btn.disabled = true;
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><span>Creating Account...</span>';
 
       setTimeout(function () {
+        WorkNestStore.createUser({ name: name, email: email, password: pw, role: role });
         btn.innerHTML = '<i class="fa-solid fa-check"></i><span>Account Created!</span>';
         btn.style.background = 'linear-gradient(135deg, #059669, #047857)';
-        showToast('Account created successfully!', 'success');
+        showToast('Account created successfully! Please sign in.', 'success');
         setTimeout(function () { window.location.href = 'signin.html'; }, 1400);
-      }, 1800);
+      }, 800);
       return false;
     }
   </script>

@@ -121,7 +121,7 @@
             <label>Email Address</label>
             <div class="auth-input-wrap">
               <i class="fa-regular fa-envelope input-icon"></i>
-              <input type="email" class="auth-input" placeholder="you@example.com" required>
+              <input type="email" class="auth-input" id="signinEmail" placeholder="you@example.com" required>
             </div>
           </div>
 
@@ -141,7 +141,7 @@
               <input type="checkbox" id="rememberMe">
               <span>Remember me</span>
             </label>
-            <a href="#" class="auth-forgot">Forgot password?</a>
+            <a href="#" class="auth-forgot" id="forgotLink">Forgot password?</a>
           </div>
 
           <button type="submit" class="auth-submit" id="signinBtn">
@@ -159,14 +159,66 @@
 
   </div>
 
+  <!-- Forgot Password Modal -->
+  <div id="forgotOverlay" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(5,10,24,0.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px;">
+    <div style="width:100%;max-width:420px;background:var(--bg-2, #0f1a36);border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:32px 28px;position:relative;">
+      <button type="button" id="forgotClose" aria-label="Close" style="position:absolute;top:14px;right:14px;background:none;border:none;color:#94a3b8;font-size:1.1rem;cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+      <div class="auth-header" style="margin-bottom:20px;">
+        <h1 style="font-size:1.4rem;">Reset Password</h1>
+        <p>Verify your email to set a new password</p>
+      </div>
+
+      <div id="forgotStepEmail">
+        <div class="auth-field">
+          <label>Email Address</label>
+          <div class="auth-input-wrap">
+            <i class="fa-regular fa-envelope input-icon"></i>
+            <input type="email" class="auth-input" id="forgotEmail" placeholder="you@example.com">
+          </div>
+        </div>
+        <p id="forgotError" style="display:none;color:#f87171;font-size:0.85rem;margin:10px 0 0;"></p>
+        <button type="button" class="auth-submit" id="forgotVerifyBtn" style="margin-top:16px;">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Verify Email</span>
+        </button>
+      </div>
+
+      <div id="forgotStepReset" style="display:none;">
+        <div class="auth-field">
+          <label>New Password</label>
+          <div class="auth-input-wrap">
+            <i class="fa-solid fa-lock input-icon"></i>
+            <input type="password" class="auth-input" id="forgotNewPassword" placeholder="At least 8 characters">
+          </div>
+        </div>
+        <div class="auth-field">
+          <label>Confirm New Password</label>
+          <div class="auth-input-wrap">
+            <i class="fa-solid fa-shield-halved input-icon"></i>
+            <input type="password" class="auth-input" id="forgotConfirmPassword" placeholder="Re-enter new password">
+          </div>
+        </div>
+        <p id="resetError" style="display:none;color:#f87171;font-size:0.85rem;margin:10px 0 0;"></p>
+        <button type="button" class="auth-submit" id="forgotSaveBtn" style="margin-top:16px;">
+          <i class="fa-solid fa-key"></i>
+          <span>Update Password</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/auth.js"></script>
   <script>
     AOS.init({ once: true, duration: 700 });
 
     window.addEventListener('load', function () {
       var loader = document.getElementById('loader');
       if (loader) setTimeout(function () { loader.classList.add('hidden'); }, 600);
+      if (new URLSearchParams(window.location.search).get('required')) {
+        showToast('Please sign in to access your dashboard.');
+      }
     });
 
     function showToast(msg, type) {
@@ -201,23 +253,111 @@
     function handleSignIn(e) {
       e.preventDefault();
       var btn = document.getElementById('signinBtn');
-      var role = document.querySelector('input[name="role"]:checked').value;
+      var email = document.getElementById('signinEmail').value.trim();
+      var password = document.getElementById('signinPassword').value;
+      var remember = document.getElementById('rememberMe').checked;
+
+      var result = WorkNestStore.verifyCredentials(email, password);
+      if (!result.ok) {
+        showToast(result.message);
+        document.getElementById('signinPassword').value = '';
+        return false;
+      }
+
+      var btn = document.getElementById('signinBtn');
       btn.disabled = true;
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><span>Signing In...</span>';
+
       setTimeout(function () {
+        WorkNestStore.setSession(result.user, remember);
         btn.innerHTML = '<i class="fa-solid fa-check"></i><span>Welcome Back!</span>';
         btn.style.background = 'linear-gradient(135deg, #059669, #047857)';
         showToast('Signed in successfully!', 'success');
         setTimeout(function () {
-          if (role === 'owner') {
-            window.location.href = 'dashboard.html';
-          } else {
-            window.location.href = 'dashboard.html';
-          }
+          window.location.href = 'dashboard.html';
         }, 1200);
-      }, 1500);
+      }, 1200);
       return false;
     }
+
+    // ── Forgot password flow ──
+    var forgotOverlay = document.getElementById('forgotOverlay');
+    var forgotTargetEmail = '';
+
+    function openForgotModal() {
+      forgotOverlay.style.display = 'flex';
+      showForgotStep('email');
+    }
+
+    function closeForgotModal() {
+      forgotOverlay.style.display = 'none';
+      document.getElementById('forgotEmail').value = '';
+      document.getElementById('forgotNewPassword').value = '';
+      document.getElementById('forgotConfirmPassword').value = '';
+      hideForgotError();
+    }
+
+    function showForgotStep(step) {
+      document.getElementById('forgotStepEmail').style.display = step === 'email' ? '' : 'none';
+      document.getElementById('forgotStepReset').style.display = step === 'reset' ? '' : 'none';
+      hideForgotError();
+    }
+
+    function showForgotError(id, msg) {
+      var el = document.getElementById(id);
+      el.textContent = msg;
+      el.style.display = '';
+    }
+
+    function hideForgotError() {
+      ['forgotError', 'resetError'].forEach(function (id) {
+        var el = document.getElementById(id);
+        el.style.display = 'none';
+      });
+    }
+
+    document.getElementById('forgotLink').addEventListener('click', function (e) {
+      e.preventDefault();
+      openForgotModal();
+    });
+
+    document.getElementById('forgotClose').addEventListener('click', closeForgotModal);
+
+    forgotOverlay.addEventListener('click', function (e) {
+      if (e.target === forgotOverlay) closeForgotModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && forgotOverlay.style.display === 'flex') closeForgotModal();
+    });
+
+    document.getElementById('forgotVerifyBtn').addEventListener('click', function () {
+      var email = document.getElementById('forgotEmail').value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showForgotError('forgotError', 'Please enter a valid email address.');
+        return;
+      }
+      if (!WorkNestStore.findUser(email)) {
+        showForgotError('forgotError', 'No account found with this email address.');
+        return;
+      }
+      forgotTargetEmail = email;
+      showForgotStep('reset');
+    });
+
+    document.getElementById('forgotSaveBtn').addEventListener('click', function () {
+      var pw = document.getElementById('forgotNewPassword').value;
+      var cpw = document.getElementById('forgotConfirmPassword').value;
+
+      if (pw.length < 8) { showForgotError('resetError', 'Password must be at least 8 characters.'); return; }
+      if (pw !== cpw) { showForgotError('resetError', 'Passwords do not match.'); return; }
+
+      WorkNestStore.setPassword(forgotTargetEmail, pw);
+      closeForgotModal();
+      showToast('Password updated successfully! Please sign in.', 'success');
+      document.getElementById('signinEmail').value = forgotTargetEmail;
+      document.getElementById('signinPassword').focus();
+    });
   </script>
 
   <footer class="auth-footer">

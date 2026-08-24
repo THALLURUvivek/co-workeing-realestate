@@ -42,7 +42,7 @@
           <a href="#" class="dash-nav-link" data-section="bookings">
             <i class="fa-solid fa-calendar-check"></i>
             <span>My Bookings</span>
-            <span class="dash-nav-badge">3</span>
+            <span class="dash-nav-badge" id="bookingsBadge">3</span>
           </a>
         </div>
 
@@ -100,7 +100,7 @@
         </div>
 
         <div class="dash-nav-item">
-          <a href="index.html" class="dash-nav-link">
+          <a href="#" class="dash-nav-link" id="signOutLink">
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
             <span>Sign Out</span>
           </a>
@@ -418,7 +418,7 @@
 
           <div class="dash-card" data-aos="fade-up">
             <div class="dash-card-header">
-              <h3 class="dash-card-title">All Bookings <span style="color:var(--text-4);font-weight:400;font-size:var(--fs-sm);">(6)</span></h3>
+              <h3 class="dash-card-title">All Bookings <span id="bookingsCount" style="color:var(--text-4);font-weight:400;font-size:var(--fs-sm);">(6)</span></h3>
               <a href="#" class="dash-card-action" data-section="properties" style="background:var(--primary);color:white;padding:8px 18px;border-radius:var(--r-sm);font-size:var(--fs-sm);"><i class="fa-solid fa-plus"></i> New Booking</a>
             </div>
             <div class="dash-card-body" style="padding:0;">
@@ -1059,19 +1059,19 @@
                 <form id="tourForm" style="display:flex;flex-direction:column;gap:16px;">
                   <div>
                     <label style="display:block;font-size:var(--fs-sm);font-weight:500;margin-bottom:6px;color:var(--text-2);">Full Name</label>
-                    <input type="text" style="width:100%;border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm);" value="Vivek Kumar" placeholder="Your full name">
+                    <input type="text" id="tourName" required style="width:100%;border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm);" placeholder="Your full name">
                   </div>
                   <div>
                     <label style="display:block;font-size:var(--fs-sm);font-weight:500;margin-bottom:6px;color:var(--text-2);">Email Address</label>
-                    <input type="email" style="width:100%;border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm);" value="vivek@example.com" placeholder="you@example.com">
+                    <input type="email" id="tourEmail" required style="width:100%;border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm);" placeholder="you@example.com">
                   </div>
                   <div>
                     <label style="display:block;font-size:var(--fs-sm);font-weight:500;margin-bottom:6px;color:var(--text-2);">Phone Number</label>
-                    <input type="tel" style="width:100%;border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm);" placeholder="+91 98765 43210">
+                    <input type="tel" id="tourPhone" style="width:100%;border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm);" placeholder="+91 98765 43210">
                   </div>
                   <div>
                     <label style="display:block;font-size:var(--fs-sm);font-weight:500;margin-bottom:6px;color:var(--text-2);">Preferred Property</label>
-                    <select class="dash-filter-select" style="width:100%;">
+                    <select class="dash-filter-select" id="tourProperty" required style="width:100%;">
                       <option value="">Select a property</option>
                       <option value="the-hive">The Hive - Bangalore</option>
                       <option value="cowork-arena">CoWork Arena - Mumbai</option>
@@ -1083,11 +1083,11 @@
                   </div>
                   <div>
                     <label style="display:block;font-size:var(--fs-sm);font-weight:500;margin-bottom:6px;color:var(--text-2);">Preferred Date</label>
-                    <input type="date" style="width:100%;border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm);">
+                    <input type="date" id="tourDate" required style="width:100%;border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 14px;font-size:var(--fs-sm);">
                   </div>
                   <div>
                     <label style="display:block;font-size:var(--fs-sm);font-weight:500;margin-bottom:6px;color:var(--text-2);">Preferred Time</label>
-                    <select class="dash-filter-select" style="width:100%;">
+                    <select class="dash-filter-select" id="tourTime" required style="width:100%;">
                       <option value="">Select a time slot</option>
                       <option value="9am">9:00 AM - 10:00 AM</option>
                       <option value="10am">10:00 AM - 11:00 AM</option>
@@ -1107,7 +1107,7 @@
               <div class="dash-card-header">
                 <h3 class="dash-card-title">Upcoming Tours</h3>
               </div>
-              <div class="dash-card-body">
+              <div class="dash-card-body" id="upcomingToursList">
                 <div class="dash-booking-mini" style="border:1px solid var(--border);border-radius:var(--r-md);padding:16px;">
                   <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?fm=webp&w=200&q=80" alt="CoWork Arena" class="dash-booking-mini-img">
                   <div class="dash-booking-mini-info">
@@ -1120,7 +1120,8 @@
                   </div>
                   <span class="dash-status active">Confirmed</span>
                 </div>
-                <div style="text-align:center;padding:32px 0;color:var(--text-4);font-size:var(--fs-sm);">
+                <div id="tourRequestList"></div>
+                <div id="noToursNote" style="text-align:center;padding:32px 0;color:var(--text-4);font-size:var(--fs-sm);">
                   <i class="fa-regular fa-calendar-check" style="font-size:2rem;display:block;margin-bottom:12px;color:var(--text-3);"></i>
                   No other tours scheduled. Book a tour to explore more spaces!
                 </div>
@@ -1320,14 +1321,44 @@
         </div>
         <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• END SUPPORT â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 
-      </div>
-    </main>
   </div>
+
+  <!-- Dashboard Toast -->
+  <div id="dashToast" style="display:none;position:fixed;bottom:24px;right:24px;z-index:3000;background:var(--bg-3,#142044);border:1px solid rgba(16,185,129,0.45);color:#fff;padding:14px 20px;border-radius:12px;font-size:var(--fs-sm);box-shadow:0 8px 30px rgba(0,0,0,0.45);max-width:360px;"></div>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/auth.js"></script>
   <script>
-    // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• SIDEBAR TOGGLE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    var session = WorkNestStore.requireAuth();
+
+    if (session) {
+      var firstName = session.name.split(' ')[0];
+      var initials = session.name.trim().split(/\s+/).map(function (p) { return p[0]; }).join('').substring(0, 2).toUpperCase();
+      var avatarEl = document.querySelector('.dash-user-avatar');
+      var nameEl = document.querySelector('.dash-user-name');
+      var roleEl = document.querySelector('.dash-user-role');
+      var welcomeEl = document.querySelector('.dash-welcome h2');
+      var dateEl = document.querySelector('.dash-welcome-date');
+
+      if (avatarEl) avatarEl.textContent = initials;
+      if (nameEl) nameEl.textContent = session.name;
+      if (roleEl) roleEl.textContent = session.role === 'owner' ? 'Space Owner' : 'Pro Member';
+      if (welcomeEl) {
+        var hour = new Date().getHours();
+        var greeting = hour < 12 ? 'Good Morning' : (hour < 17 ? 'Good Afternoon' : 'Good Evening');
+        welcomeEl.textContent = greeting + ', ' + firstName + '!';
+      }
+      if (dateEl) {
+        dateEl.innerHTML = '<i class="fa-regular fa-calendar"></i> ' + new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      }
+
+      document.getElementById('signOutLink').addEventListener('click', function (e) {
+        e.preventDefault();
+        WorkNestStore.logout();
+      });
+    }
+
     var sidebar = document.getElementById('dashSidebar');
     var overlay = document.getElementById('sidebarOverlay');
     var toggle = document.getElementById('sidebarToggle');
@@ -1408,7 +1439,6 @@
     var filterBtns = document.querySelectorAll('.dash-filter-btn');
     var cityFilter = document.getElementById('cityFilter');
     var searchInput = document.getElementById('bookingSearch');
-    var rows = document.querySelectorAll('#bookingsTable tbody tr');
     var emptyState = document.getElementById('emptyState');
 
     function applyFilters() {
@@ -1416,6 +1446,7 @@
       var statusFilter = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
       var cityVal = cityFilter ? cityFilter.value : 'all';
       var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+      var rows = document.querySelectorAll('#bookingsTable tbody tr');
       var visibleCount = 0;
 
       rows.forEach(function(row) {
@@ -1458,12 +1489,141 @@
 
     // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• TOUR FORM â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
     var tourForm = document.getElementById('tourForm');
-    if (tourForm) {
-      tourForm.addEventListener('submit', function(e) {
+    var tourToast = document.getElementById('dashToast');
+    var toastTimer = null;
+
+    function showToast(msg) {
+      if (!tourToast) return;
+      tourToast.innerHTML = '<i class="fa-solid fa-circle-check" style="color:var(--primary);margin-right:8px;"></i>' + msg;
+      tourToast.style.display = 'block';
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { tourToast.style.display = 'none'; }, 4000);
+    }
+
+    var propertyCities = {
+      'the-hive': 'bangalore',
+      'cowork-arena': 'mumbai',
+      'worknest-delhi': 'delhi',
+      'startuphub': 'bangalore',
+      'nesthub': 'hyderabad',
+      'workspace360': 'pune'
+    };
+
+    function formatTourDate(dateStr) {
+      try {
+        return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      } catch (err) {
+        return dateStr;
+      }
+    }
+
+    function capitalize(text) {
+      return text ? text.charAt(0).toUpperCase() + text.slice(1) : '';
+    }
+
+    function renderTourData() {
+      var tours = WorkNestStore.getTours();
+
+      /* Upcoming Tours card */
+      var listEl = document.getElementById('tourRequestList');
+      var noteEl = document.getElementById('noToursNote');
+      if (listEl) {
+        listEl.innerHTML = '';
+        tours.slice().reverse().forEach(function (tour) {
+          var item = document.createElement('div');
+          item.className = 'dash-booking-mini';
+          item.style.cssText = 'border:1px solid var(--border);border-radius:var(--r-md);padding:16px;margin-top:12px;';
+          item.innerHTML =
+            '<div class="dash-booking-mini-info" style="max-width:none;">' +
+              '<div class="dash-booking-mini-title">' + tour.property + '</div>' +
+              '<div class="dash-booking-mini-meta">' +
+                '<span><i class="fa-regular fa-calendar"></i> ' + formatTourDate(tour.date) + '</span>' +
+                '<span><i class="fa-regular fa-clock"></i> ' + tour.time + '</span>' +
+                '<span><i class="fa-solid fa-location-dot"></i> ' + (capitalize(tour.city) || '-') + '</span>' +
+              '</div>' +
+            '</div>' +
+            '<span class="dash-status pending">' + tour.status + '</span>';
+          listEl.appendChild(item);
+        });
+        if (noteEl) noteEl.style.display = tours.length ? 'none' : '';
+      }
+
+      /* Bookings table rows */
+      var tbody = document.querySelector('#bookingsTable tbody');
+      document.querySelectorAll('tr[data-tour-row]').forEach(function (row) { row.remove(); });
+      if (tbody) {
+        tours.slice().reverse().forEach(function (tour) {
+          var tr = document.createElement('tr');
+          tr.setAttribute('data-status', 'pending');
+          tr.setAttribute('data-city', tour.city || '');
+          tr.setAttribute('data-tour-row', '1');
+          tr.innerHTML =
+            '<td data-label="Property"><div class="property-cell"><div class="property-cell-info"><h6>' + tour.property + '</h6><span>Guided Tour Request</span></div></div></td>' +
+            '<td data-label="Type">Property Tour</td>' +
+            '<td data-label="City">' + (capitalize(tour.city) || '-') + '</td>' +
+            '<td data-label="Start Date">' + formatTourDate(tour.date) + '</td>' +
+            '<td data-label="End Date">' + formatTourDate(tour.date) + '</td>' +
+            '<td data-label="Amount" style="color:var(--primary-400);font-weight:600;">Free</td>' +
+            '<td data-label="Status"><span class="dash-status pending">' + tour.status + '</span></td>' +
+            '<td data-label="Action"><button class="dash-topbar-btn" style="width:32px;height:32px;" title="View Details"><i class="fa-solid fa-eye" style="font-size:0.85rem;"></i></button></td>';
+          tbody.insertBefore(tr, tbody.firstChild);
+        });
+      }
+
+      /* Counts */
+      var staticRows = document.querySelectorAll('#bookingsTable tbody tr:not([data-tour-row])').length;
+      var total = staticRows + tours.length;
+      var countEl = document.getElementById('bookingsCount');
+      var badgeEl = document.getElementById('bookingsBadge');
+      if (countEl) countEl.textContent = '(' + total + ')';
+      if (badgeEl) badgeEl.textContent = total;
+    }
+
+    if (session && tourForm) {
+      document.getElementById('tourName').value = session.name;
+      document.getElementById('tourEmail').value = session.email;
+
+      var dateInput = document.getElementById('tourDate');
+      dateInput.min = new Date().toISOString().split('T')[0];
+
+      tourForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        alert('Tour request submitted successfully! We will confirm your visit shortly.');
+        var propSel = document.getElementById('tourProperty');
+        var timeSel = document.getElementById('tourTime');
+        var propertyValue = propSel.value;
+
+        if (!propertyValue) { showToast('Please select a preferred property.'); return; }
+        if (!dateInput.value) { showToast('Please choose a preferred date.'); return; }
+        if (!timeSel.value) { showToast('Please choose a preferred time slot.'); return; }
+
+        var propertyName = propSel.options[propSel.selectedIndex].text.split(' - ')[0];
+
+        WorkNestStore.addTour({
+          name: document.getElementById('tourName').value,
+          email: document.getElementById('tourEmail').value,
+          phone: document.getElementById('tourPhone').value,
+          property: propertyName,
+          city: propertyCities[propertyValue] || '',
+          date: dateInput.value,
+          time: timeSel.options[timeSel.selectedIndex].text,
+          source: 'dashboard'
+        });
+
+        renderTourData();
         this.reset();
+        document.getElementById('tourName').value = session.name;
+        document.getElementById('tourEmail').value = session.email;
+        showToast('Tour request submitted! It has been added to your bookings.');
       });
+    }
+
+    renderTourData();
+
+    if (window.location.hash) {
+      var initialSection = window.location.hash.replace('#', '');
+      if (document.getElementById('sec-' + initialSection)) {
+        switchSection(initialSection);
+      }
     }
 
     // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• UNAVAILABLE FEATURES â†’ ERROR PAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
